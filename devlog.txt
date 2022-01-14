@@ -1,0 +1,3 @@
+Our Plan
+January 13 2022
+We wanted to make an adventure-based game because, adventure. An RPG would also help us make use of inheritance trees, chatbots, and interfaces so we will be able to show what we know about those. Hugo proposed that duckies should be included, so following the typical character archetypes of an RPG, we decided that our duckies should be our all-knowing magical companion. And of course, since this is Stuyvesant, the main character obtains their gear by answering trivia questions. 
