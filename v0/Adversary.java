@@ -2,8 +2,15 @@ public class Adversary implements AdInt{
 
 	protected int _hp;
 	protected int _defense;
-	protected int _attackRating;
+	protected double _attackRating;
 	protected int _strength;
+
+	public Adversary() {
+		_hp = 100;
+		_defense = 50;
+		_attackRating = 1.0;
+		_strength = 50;
+	}
 
 	public boolean isAlive() {
 		return true; //temporary (for compiler)
