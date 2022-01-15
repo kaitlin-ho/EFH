@@ -1,4 +1,4 @@
-public class Sword extends Weapon{
+public class Sword extends Equipment {
 
 	public Sword() {
 		_name = "Sword";
