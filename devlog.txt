@@ -44,7 +44,7 @@ tales of wisdom gained...
 ==============================================================
 
 
-1/13/22
+01/13/22
 --------------------------------------------------------------
 Ariella :: Typed and cleaned up proposal
 Hugo :: 
@@ -54,7 +54,12 @@ Everyone:: Planned the proposal in class
 
 1/14/22
 --------------------------------------------------------------
-Ariella :: Finished the UMLs for Adversary, Equipment, Chatbox
+Ariella :: Finished the UMLs; first attempt at wrote interfaces; 
+	   wrote Ducky.java and added minimal code to all connected
+	   files (superclasses, etc) in order to get past the compiler
+	   for testing; created temporary file Test.java to test new
+	   additions without manipulating Woo.java (runner); updated
+	   devlog
 Hugo :: 
 Kaitlin :: Created all files with headings; updated devlog
 Everyone:: Discussed the plan and started constructing the UML diagrams

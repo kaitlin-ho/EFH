@@ -1,3 +1,3 @@
-public class Monster extends Adversaries{
+public class Monster extends Adversary{
 
 }
