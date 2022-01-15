@@ -54,7 +54,7 @@ Everyone:: Planned the proposal in class
 
 1/14/22
 --------------------------------------------------------------
-Ariella :: Made UMLs for Adversary, Equipment, Chatbox
+Ariella :: Finished the UMLs for Adversary, Equipment, Chatbox
 Hugo :: 
 Kaitlin :: Created all files with headings; updated devlog
 Everyone:: Discussed the plan and started constructing the UML diagrams
