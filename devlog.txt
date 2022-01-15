@@ -67,9 +67,9 @@ Everyone:: Discussed the plan and started constructing the UML diagrams
 
 1/15/22
 --------------------------------------------------------------
-Ariella :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, and the driver file.
+Ariella :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, Weapons, Protection, and the driver file.
 Hugo :: 
-Kaitlin :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, and the driver file.
+Kaitlin :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, Weapons, Protection, and the driver file.
 Everyone:: 
 ==============================================================
 
