@@ -59,6 +59,7 @@ public class Woo{
     if (!game.play()){
       String s = "Game Over";
       System.out.println(s);
+      return;
     }
   
   }
