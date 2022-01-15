@@ -61,15 +61,15 @@ Ariella :: Finished the UMLs; first attempt at wrote interfaces;
 	   additions without manipulating Woo.java (runner); updated
 	   devlog
 Hugo :: 
-Kaitlin :: Created all files with headings; updated devlog
-Everyone:: Discussed the plan and started constructing the UML diagrams
+Kaitlin :: Created work repo and filled out form; created files with headings; updated devlog
+Everyone:: Discussed the plan and started constructing the UML diagrams in class
 ==============================================================
 
 1/15/22
 --------------------------------------------------------------
-Ariella :: 
+Ariella :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, Weapons, Protection, and the test driver file. The stats are arbitrary and will be changed later (for balancing purposes).
 Hugo :: 
-Kaitlin :: 
+Kaitlin :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, Weapons, Protection, and the test driver file. The stats are arbitrary and will be changed later (for balancing purposes).
 Everyone:: 
 ==============================================================
 
