@@ -7,23 +7,6 @@ pd 6
 The Ducky RPG
 We wanted to make an adventure-based game because, adventure. An RPG would also help us make use of inheritance trees, chatbots, and interfaces so we will be able to show what we know about those. Hugo proposed that duckies should be included, so following the typical character archetypes of an RPG, we decided that our duckies should be our all-knowing magical companion. And of course, since this is Stuyvesant, the main character obtains their gear by answering trivia questions. 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete this instruction block once all teammates understand usage.
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
@@ -61,9 +44,18 @@ tales of wisdom gained...
 ==============================================================
 
 
-yyyy-mm-dd
+1/13/22
 --------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Ariella :: Typed and cleaned up proposal
+Hugo :: 
+Kaitlin :: Created team repo
+Everyone:: Planned the proposal in class 
+==============================================================
+
+1/14/22
+--------------------------------------------------------------
+Ariella :: Made UMLs for Adversary, Equipment, Chatbox
+Hugo :: 
+Kaitlin :: Created all files with headings; updated devlog
+Everyone:: Discussed the plan and started constructing the UML diagrams
 ==============================================================
