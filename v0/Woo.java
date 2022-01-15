@@ -47,17 +47,19 @@ public class Woo{
     
   }
   
- // public boolean play(){
+  public boolean play(){
     
   
-  //}
+  }
   
   public static void main( String[] args){
   
     //new game
     Woo game = new Woo();
-    
-    
+    if (!game.play()){
+      String s = "Game Over";
+      System.out.println(s);
+    }
   
   }
   
