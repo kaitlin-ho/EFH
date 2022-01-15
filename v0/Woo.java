@@ -25,8 +25,8 @@ public class Woo{
   }
   
   public void newGame(){
-    String s;
-    String name;
+    String s = "";
+    String name = "";
     s = "Ducky RPG\n";
     s += "EXPLANATION OF GAME";
     System.out.println(s);
