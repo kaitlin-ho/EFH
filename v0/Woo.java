@@ -17,7 +17,7 @@ public class Woo{
   private InputStreamReader isr;
   private BufferedReader in;
   
-  public Woo{
+  public Woo(){
     gameOver = false;
     isr = new InputStreamReader( System.in ); //InputStreamReader reads bytes and decodes them into characters
     in = new BufferedReader( isr ); //BufferedReader reads text from a character-input stream
