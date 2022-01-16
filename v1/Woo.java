@@ -208,20 +208,24 @@ public class Woo{
       return proceed;
     }
     else if (i == 3) {
-      
-      String s = "";
-      for (int n = 0; n < _player._inventory.size(); n++){
-        s += (n + 1) + ". ";
-        s += (_player._inventory.get(n)._name) + "\n";
+      if (_player._inventory.size() == 0){
+        System.out.println("You have nothing in your inventory.");
       }
-      System.out.println("What do you want to equip?");
-      System.out.println(s);
-      int itemNum = 1;
-      try{
-        itemNum = Integer.parseInt(in.readLine());
+      else {
+        String s = "";
+        for (int n = 0; n < _player._inventory.size(); n++){
+          s += (n + 1) + ". ";
+          s += (_player._inventory.get(n)._name) + "\n";
+        }
+        System.out.println("What do you want to equip?");
+        System.out.println(s);
+        int itemNum = 1;
+        try{
+          itemNum = Integer.parseInt(in.readLine());
+        }
+        catch (IOException e) { }
+        equip(_player._inventory.get(itemNum-1));
       }
-      catch (IOException e) { }
-      equip(_player._inventory.get(itemNum-1));
     }
     
     else if ( i == 4 ) {
