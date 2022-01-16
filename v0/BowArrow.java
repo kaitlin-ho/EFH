@@ -6,7 +6,7 @@ public class BowArrow extends Equipment{
     _defenseAlt = 10;
   }
 
-  public static String about() {
+  public String about() {
     return "The Bow and Arrow adds a new weapon to your arsenal of ways to damage your foe.";
   }
 

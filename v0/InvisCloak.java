@@ -6,7 +6,7 @@ public class InvisCloak extends Equipment {
     _defenseAlt = 10;
   }
 
-  public static String about() {
+  public String about() {
     return "The Invisibility Cloak makes it harder for your enemy to land a powerful blow.";
   }
 }

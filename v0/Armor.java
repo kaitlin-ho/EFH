@@ -6,7 +6,7 @@ public class Armor extends Equipment{
     _defenseAlt = 10;
   }
 
-  public static String about() {
+  public String about() {
     return "Armor allows you to take less damage.";
   }
 

@@ -43,6 +43,7 @@ public class NPC extends Chatbox{
 			if (answer.indexOf(i) >= 0) {
 				System.out.println(_winMsg);
 				_player.invent(_equipment.get(_rightAnsCt));
+				System.out.println(_equipment.get(_rightAnsCt).about());
 				_rightAnsCt += 1;
 				return;
 			}

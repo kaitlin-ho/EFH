@@ -4,7 +4,7 @@ public class Equipment implements EqInt{
 	protected int _strengthAlt;
 	protected int _defenseAlt;
 
-	public static String about() {
+	public String about() {
 		return "Equipment modifies your strength and defense to help you defeat monsters.";
 	}
 

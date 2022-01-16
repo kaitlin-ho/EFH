@@ -6,7 +6,7 @@ public class Shield extends Equipment{
     _defenseAlt = 10;
   }
 
-  public static String about() {
+  public String about() {
     return "The shield gives you a chance to block your opponent's attack.";
   }
 }
