@@ -172,6 +172,10 @@ public class Woo{
     }
   }
 
+  public void equip(Equipment item){
+    _player.equip(item);
+  }
+  
   public String startMsg(){
     String s;
     s = "\nWhat would you like to do? \n";
@@ -181,7 +185,7 @@ public class Woo{
     s += "Selection: ";
     return s;
   }
-
+  
   public boolean playTurn(){
     boolean proceed = true;
     int i = 1;
@@ -199,7 +203,15 @@ public class Woo{
       return proceed;
     }
     else if (i == 3) {
-
+      String s = "";
+      for (Equipment a : _player._inventory){
+        s += _player.invToString();
+      }
+      System.out.println("What do you want to equip? Please spell it properly");
+      System.out.println(s);
+      Scanner scan = new Scanner(System.in);
+      String item = scan.nextLine();
+      equip(item);
     }
     else {
       System.out.println("Who do you wish to consult");
