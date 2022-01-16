@@ -205,7 +205,7 @@ public class Woo{
     else if (i == 3) {
       
       String s = "";
-      for (int n = 0; n < _player._inventory.getSize(); n++){
+      for (int n = 0; n < _player._inventory.size(); n++){
         s += (n + 1) + ". ";
         s += (_player._inventory.get(n)._name) + "\n";
       }
