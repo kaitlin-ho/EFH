@@ -54,10 +54,10 @@ public class Woo{
     //Difficulty
     s = "\nChoose your difficulty: \n";
     s += "1: Easy\n";
-    s += "2: Hard\n";
+    s += "2: Medium\n";
+    s += "3: Hard\n";
     s += "Selection: ";
     System.out.print(s);
-
     try {
       _difficulty = Integer.parseInt( in.readLine() );
     }
@@ -117,7 +117,7 @@ public class Woo{
     if (_defeatCtr == 5) {
       _monster = new Boss();
     }
-    else if (Math.random() >= _difficulty/2.0) {
+    else if (Math.random() >= _difficulty/4.0 + 0.01) {
       _monster = new MonWeak();
     }
     else {
