@@ -1,7 +1,7 @@
 import java.util.*;
 public class Kats extends NPC{
-  public Kats() {
-    super();
+  public Kats(Shield shield, Sword sword) { 
+   super();
     _questions.add("Question 1");
     _questions.add("Question 2");
     ArrayList<String> answersOne = new ArrayList<String>(1);
@@ -10,17 +10,15 @@ public class Kats extends NPC{
     answersTwo.add("answer 2");
     _keywords.add(answersOne);
     _keywords.add(answersTwo);
-    Shield shield = new Shield();
     _equipment.add(shield);
-    Sword sword = new Sword();
     _equipment.add(sword);
     _greeting = "Asking the hard-hitting questions.";
     _winMsg = "Good.";
     _lossMsg = "HAHA!";
   }
 
-  public Kats(Player player) {
-    this();
+  public Kats(Player player, Shield shield, Sword sword) {
+    this(shield, sword);
     _player = player;
   }
 

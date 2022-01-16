@@ -10,6 +10,13 @@ public class Woo{
   private Mykolyk _mykolyk;
   private Erica _erica;
 
+  public Shield _shield;
+  public Armor _armor;
+  public InvisCloak _invisCloak;
+  public Sword _sword;
+  public BowArrow _bowArrow;
+  public KtS _kts;
+
   private int _difficulty; //not used right now
   private int _defeatCtr;
   private boolean _gameOver;
@@ -21,9 +28,15 @@ public class Woo{
     _gameOver = false;
     _player = new Player();
     _ducky = new Ducky();
-    _kats = new Kats(_player);
-    _mykolyk = new Mykolyk(_player);
-    _erica = new Erica(_player);
+    _shield = new Shield();
+    _armor = new Armor();
+    _invisCloak = new InvisCloak();
+    _sword = new Sword();
+    _bowArrow = new BowArrow();
+    _kts = new KtS();
+    _kats = new Kats(_player, _shield, _sword);
+    _mykolyk = new Mykolyk(_player, _invisCloak, _kts);
+    _erica = new Erica(_player, _armor, _bowArrow);
     _defeatCtr = 0;
     isr = new InputStreamReader( System.in ); //InputStreamReader reads bytes and decodes them into characters
     in = new BufferedReader( isr ); //BufferedReader reads text from a character-input stream
@@ -195,8 +208,5 @@ public class Woo{
     String s = "Game Over";
     System.out.println(s);
   }
-
-
-
 
 }

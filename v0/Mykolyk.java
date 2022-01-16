@@ -1,6 +1,6 @@
 import java.util.*;
 public class Mykolyk extends NPC{
-  public Mykolyk() {
+  public Mykolyk(InvisCloak invisCloak, KtS kts) {
     super();
     _questions.add("Question 1");
     _questions.add("Question 2");
@@ -10,17 +10,15 @@ public class Mykolyk extends NPC{
     answersTwo.add("answer 2");
     _keywords.add(answersOne);
     _keywords.add(answersTwo);
-    InvisCloak InvisCloak = new InvisCloak();
-    _equipment.add(InvisCloak);
-    KtS key = new KtS();
-    _equipment.add(key);
+    _equipment.add(invisCloak);
+    _equipment.add(kts);
     _greeting = "";
     _winMsg = "";
     _lossMsg = "";
   }
 
-  public Mykolyk(Player player) {
-    this();
+  public Mykolyk(Player player, InvisCloak invisCloak, KtS kts) {
+    this(invisCloak, kts);
     _player = player;
   }
 
