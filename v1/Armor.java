@@ -3,7 +3,7 @@ public class Armor extends Equipment{
   public Armor() {
     _name = "Armor";
     _strengthAlt = 10;
-    _defenseAlt = 50;
+    _defenseAlt = 86;
   }
 
   public String about() {
