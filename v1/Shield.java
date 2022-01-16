@@ -2,8 +2,8 @@ public class Shield extends Equipment{
 
   public Shield() {
     _name = "Shield";
-    _strengthAlt = 30;
-    _defenseAlt = 40;
+    _strengthAlt = 44;
+    _defenseAlt = 70;
   }
 
   public String about() {
