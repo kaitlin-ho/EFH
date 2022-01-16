@@ -10,15 +10,15 @@ public class Player extends Adversary{
 
 	public Player() {
 		super();
+		_inventory = new ArrayList<Equipment>(6);
+		_equipment = new ArrayList<Equipment>(2);
+		_strengthAlt = 0;
+		_defenseAlt = 0;
 	}
 
 	public Player(String name) {
 		this();
 		_name = name;
-		_inventory = new ArrayList<Equipment>(6);
-		_equipment = new ArrayList<Equipment>(2);
-		_strengthAlt = 0;
-		_defenseAlt = 0;
 	}
 
 	public String getName() {
