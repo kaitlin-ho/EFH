@@ -35,10 +35,10 @@ public class Player extends Adversary{
 
 	public void equip(Equipment equipment) {
 		//Make sure it's already in the inventory
-		boolean invented = true;
+		boolean invented = false;
 		for (int i = 0; i < _inventory.size(); i++) {
-			if (!(_inventory.get(i)).equals(equipment)) {
-				invented = false;
+			if ((_inventory.get(i)).equals(equipment)) {
+				invented = true;
 			}
 		}
 		if (!invented) {
