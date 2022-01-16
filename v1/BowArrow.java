@@ -2,8 +2,8 @@ public class BowArrow extends Equipment{
 
   public BowArrow(){
     _name = "Bow and Arrow";
-    _strengthAlt = 10;
-    _defenseAlt = 10;
+    _strengthAlt = 30;
+    _defenseAlt = 20;
   }
 
   public String about() {
