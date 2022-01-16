@@ -1,7 +1,8 @@
 import java.util.*;
 public class Kats extends NPC{
+
   public Kats(Shield shield, Sword sword) { 
-   super();
+    super();
     _questions.add("Question 1");
     _questions.add("Question 2");
     ArrayList<String> answersOne = new ArrayList<String>(1);

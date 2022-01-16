@@ -79,7 +79,7 @@ public class Woo{
 
     //create player and ducky
     _player = new Player(name);
-    _ducky._name = duckyName;
+    _ducky = new Ducky(duckyName);
 
     System.out.println("");
 
