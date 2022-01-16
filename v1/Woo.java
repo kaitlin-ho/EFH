@@ -209,7 +209,6 @@ public class Woo{
         s += (n + 1) + ". ";
         s += (_player._inventory.get(n)._name) + "\n";
       }
-      
       System.out.println("What do you want to equip? Please spell it properly");
       System.out.println(s);
       int itemNum = 1;
