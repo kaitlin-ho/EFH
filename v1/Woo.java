@@ -80,7 +80,9 @@ public class Woo{
     //create player and ducky
     _player = new Player(name);
     _ducky = new Ducky(duckyName);
-
+    _kats = new Kats(_player, _shield, _sword);
+    _mykolyk = new Mykolyk(_player, _invisCloak, _kts);
+    _erica = new Erica(_player, _armor, _bowArrow);
     System.out.println("");
 
   }
