@@ -16,6 +16,10 @@ public class Adversary implements AdInt{
 		return (_hp > 0);
 	}
 
+	public int getHP() {
+		return _hp;
+	}
+	
 	public int getDefense() {
 		return _defense;
 	}
