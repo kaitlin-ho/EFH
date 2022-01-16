@@ -30,7 +30,7 @@ public class Adversary implements AdInt{
 	}
 
 	public double attackRating() {
-		_attackRating = Math.random() * 20 + 90;
+		_attackRating = Math.random() * .20 + .90;
 		return _attackRating;
 	}
 
