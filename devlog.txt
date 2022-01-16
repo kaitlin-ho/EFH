@@ -12,7 +12,7 @@ We wanted to make an adventure-based game because, adventure. An RPG would also 
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+- javac Woo.java didn't compile all the necessary files (like the equipments). We resolved this issue by adding overloaded constructors to the NPC - We instantiated the equipments in Woo.java and added overloaded constructors to all of the NPCs with parameters that took in the instantiated equipments and used them to initialize the equipment instance variables in the NPC files. 
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +77,7 @@ Everyone :: Made NPC codes for the Kats, Erica, and Mykolyk classes; This includ
 Ariella ::
 Hugo ::
 Kaitlin ::
-Everyone ::
+Everyone :: Wrote the Ducky.java file so the player can call for help during trivia or battle; wrote the battle method, which allows the player to interact with a monster (difficulties of the monster is chosen by the player).
 ==============================================================
 
 1/17/22
