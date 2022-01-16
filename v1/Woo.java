@@ -183,6 +183,7 @@ public class Woo{
     s += "2: Battle a monster \n";
     s += "3: Equip \n";
     s += "4: Check your inventory\n";
+    s += "5: Check what you have equipped\n";
     s += "Selection: ";
     
     return s;
@@ -223,6 +224,10 @@ public class Woo{
     
     else if ( i == 4 ) {
       System.out.println(_player.invToString());
+    }
+    
+    else if (i==5){
+      System.out.println(_player.eqToString());
     }
     
     else {
