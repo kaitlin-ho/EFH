@@ -5,7 +5,7 @@ Hugo Jenkins
 pd 6
 ---------------------
 The Ducky RPG
-We wanted to make an adventure-based game because, adventure. An RPG would also help us make use of inheritance trees, chatbots, and interfaces so we will be able to show what we know about those. Hugo proposed that duckies should be included, so following the typical character archetypes of an RPG, we decided that our duckies should be our all-knowing magical companion. And of course, since this is Stuyvesant, the main character obtains their gear by answering trivia questions. 
+We wanted to make an adventure-based game because, adventure. An RPG would also help us make use of inheritance trees, chatbots, and interfaces so we will be able to show what we know about those. Hugo proposed that duckies should be included, so following the typical character archetypes of an RPG, we decided that our duckies should be our all-knowing magical companion. And of course, since this is Stuyvesant, the main character obtains their gear by answering trivia questions.
 
 
 /////////// Zone of Reflection \\\\\\\\\\\
@@ -16,12 +16,11 @@ wow we so BOSS bc...
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+- How does inheritance work with import statements?
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+- this() must be the first line of an overloaded constructor
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,33 +33,33 @@ tales of wisdom gained...
 
 
 
- ______   ______   __   __   __       ______   _______     
-/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
-\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
- \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
-  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
-   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
-    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_/   \_____\/ \_____\/ \_____\/
 ==============================================================
 
 
 01/13/22
 --------------------------------------------------------------
 Ariella :: Typed and cleaned up proposal
-Hugo :: 
+Hugo ::
 Kaitlin :: Created team repo
-Everyone:: Planned the proposal in class 
+Everyone:: Planned the proposal in class
 ==============================================================
 
 1/14/22
 --------------------------------------------------------------
-Ariella :: Finished the UMLs; first attempt at wrote interfaces; 
+Ariella :: Finished the UMLs; first attempt at wrote interfaces;
 	   wrote Ducky.java and added minimal code to all connected
 	   files (superclasses, etc) in order to get past the compiler
 	   for testing; created temporary file Test.java to test new
 	   additions without manipulating Woo.java (runner); updated
 	   devlog
-Hugo :: 
+Hugo :: Started the code for taking inputs from the user in Woo.java
 Kaitlin :: Created work repo and filled out form; created files with headings; updated devlog
 Everyone:: Discussed the plan and started constructing the UML diagrams in class
 ==============================================================
@@ -68,23 +67,23 @@ Everyone:: Discussed the plan and started constructing the UML diagrams in class
 1/15/22
 --------------------------------------------------------------
 Ariella :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, Weapons, Protection, and the test driver file. The stats are arbitrary and will be changed later (for balancing purposes).
-Hugo :: 
+Hugo :: Drove
 Kaitlin :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, Weapons, Protection, and the test driver file. The stats are arbitrary and will be changed later (for balancing purposes).
-Everyone:: 
+Everyone :: Made NPC codes for the Kats, Erica, and Mykolyk classes; This included making the constructors, overloaded constructors, and the Judge method to see whether an answer should be considered right or not; Added more to the playTurn method in Woo.java so that you can now interact with the NPCs and equip your equipment; Added the the talk method to add interactions with the NPCs. 
 ==============================================================
 
 1/16/22
 --------------------------------------------------------------
-Ariella :: 
-Hugo :: 
-Kaitlin :: 
-Everyone:: 
+Ariella ::
+Hugo ::
+Kaitlin ::
+Everyone ::
 ==============================================================
 
 1/17/22
 --------------------------------------------------------------
-Ariella :: 
-Hugo :: 
-Kaitlin :: 
-Everyone:: 
+Ariella ::
+Hugo ::
+Kaitlin ::
+Everyone ::
 ==============================================================
