@@ -67,7 +67,7 @@ public class Player extends Adversary{
 	}
 
         public String invToString() {
-                String str = _name + "'s equipment: ";
+                String str = _name + "'s inventory: ";
                 for (Equipment equipment : _inventory) {
                         str += equipment._name + ", ";
                 }
