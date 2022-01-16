@@ -6,10 +6,10 @@ public class Adversary implements AdInt{
 	protected int _strength;
 
 	public Adversary() {
-		_hp = 100;
-		_defense = 50;
+		_hp = 1000;
+		_defense = 60;
 		_attackRating = 1.0;
-		_strength = 50;
+		_strength = 100;
 	}
 
 	public boolean isAlive() {
