@@ -2,8 +2,8 @@ public class Sword extends Equipment {
 
 	public Sword() {
 		_name = "Sword";
-		_strengthAlt = 10;
-		_defenseAlt = 10;
+		_strengthAlt = 55;
+		_defenseAlt = 8;
 	}
 
 	public String about() {
