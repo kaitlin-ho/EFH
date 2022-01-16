@@ -205,14 +205,14 @@ public class Woo{
     else if (i == 3) {
       
       String s = "";
-      for (int i = 0; i < _player._inventory.getSize(); i++){
-        s += (i + 1) + ". ";
-        s += (_player._inventory.get(i)._name) + "\n";
+      for (int n = 0; n < _player._inventory.getSize(); n++){
+        s += (n + 1) + ". ";
+        s += (_player._inventory.get(n)._name) + "\n";
       }
       
       System.out.println("What do you want to equip? Please spell it properly");
       System.out.println(s);
-      itemNum = 1;
+      int itemNum = 1;
       try{
         itemNum = Integer.parseInt(in.readLine());
       }
