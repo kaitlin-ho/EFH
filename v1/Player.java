@@ -76,7 +76,7 @@ public class Player extends Adversary{
         }
 
 	public String eqToString() {
-		String str = _name + "'s equipment: ";
+		String str = "Currently equipped: ";
 		for (Equipment equipment : _equipment) {
 			str += equipment._name + ", ";
 		}
