@@ -26,6 +26,7 @@ public class Adversary implements AdInt{
 
 	public void lowerHP(int damage) {
 		_hp = _hp - damage;
+		if (_hp < 0) { _hp = 0; }
 	}
 
 	public double attackRating() {

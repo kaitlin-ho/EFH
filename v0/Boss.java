@@ -2,8 +2,8 @@ public class Boss extends Monster{
 
         public Boss() {
                 super();
-                _hp = 0;
-                _strength = 0;
+                _hp = 100;
+                _strength = 50;
         }
 
 }
