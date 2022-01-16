@@ -203,16 +203,23 @@ public class Woo{
       return proceed;
     }
     else if (i == 3) {
+      
       String s = "";
-      for (Equipment a : _player._inventory){
-        s += _player.invToString();
+      for (int i = 0; i < _player._inventory.getSize(); i++){
+        s += (i + 1) + ". ";
+        s += (_player._inventory.get(i)._name) + "\n";
       }
+      
       System.out.println("What do you want to equip? Please spell it properly");
       System.out.println(s);
-      Scanner scan = new Scanner(System.in);
-      String item = scan.nextLine();
-      equip(item);
+      itemNum = 1;
+      try{
+        itemNum = Integer.parseInt(in.readLine());
+      }
+      catch (IOException e) { }
+      equip(_player._inventory.get(itemNum-1));
     }
+    
     else {
       System.out.println("Who do you wish to consult");
       String st;
