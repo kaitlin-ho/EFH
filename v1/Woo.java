@@ -182,7 +182,9 @@ public class Woo{
     s += "1: See an NPC \n";
     s += "2: Battle a monster \n";
     s += "3: Equip \n";
+    s += "4: Check your inventory\n"
     s += "Selection: ";
+    
     return s;
   }
   
@@ -217,6 +219,10 @@ public class Woo{
       }
       catch (IOException e) { }
       equip(_player._inventory.get(itemNum-1));
+    }
+    
+    else if ( i == 4 ) {
+      System.out.println(_player.invToString());
     }
     
     else {
