@@ -6,4 +6,8 @@ public class Sword extends Equipment {
 		_defenseAlt = 10;
 	}
 
+	public static String about() {
+		return "The Sword makes your attacks more powerful.";
+	}
+
 }

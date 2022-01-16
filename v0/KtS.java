@@ -6,4 +6,8 @@ public class KtS extends Equipment{
 		_defenseAlt = 10;
 	}
 
+	public static String about() {
+		return "You will find that the Key-to-Success is the most powerful tool of them all";
+	}
+
 }
