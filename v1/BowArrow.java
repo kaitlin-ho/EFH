@@ -2,7 +2,7 @@ public class BowArrow extends Equipment{
 
   public BowArrow(){
     _name = "Bow and Arrow";
-    _strengthAlt = 30;
+    _strengthAlt = 45;
     _defenseAlt = 20;
   }
 
