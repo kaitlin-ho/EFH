@@ -2,8 +2,8 @@ public class KtS extends Equipment{
 
 	public KtS(){
 		_name = "KtS";
-		_strengthAlt = 10;
-		_defenseAlt = 10;
+		_strengthAlt = 500;
+		_defenseAlt = -50;
 	}
 
 	public String about() {
