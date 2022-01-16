@@ -22,9 +22,9 @@ public class Woo{
     _player = new Player();
     _monster = new Monster();
     _ducky = new Ducky();
-    _kats = new Kats();
-    _mykolyk = new Mykolyk();
-    _erica = new Erica();
+    _kats = new Kats(_player);
+    _mykolyk = new Mykolyk(_player);
+    _erica = new Erica(_player);
     isr = new InputStreamReader( System.in ); //InputStreamReader reads bytes and decodes them into characters
     in = new BufferedReader( isr ); //BufferedReader reads text from a character-input stream
     newGame();
@@ -55,7 +55,7 @@ public class Woo{
 
   public String startMsg(){
     String s;
-    s = "What would you like to do? \n";
+    s = "\nWhat would you like to do? \n";
     s += "1: See an NPC \n";
     s += "2: Battle a monster \n";
     s += "3: Equip ";
@@ -64,7 +64,7 @@ public class Woo{
 
   public void talk(NPC npc) {
     String answer;
-    npc.getResponse();
+    System.out.println(npc.getResponse());
     Scanner convo = new Scanner(System.in);
     answer = convo.nextLine();
     npc.judge(answer);
@@ -87,7 +87,7 @@ public class Woo{
     else {
       System.out.println("Who do you wish to consult");
       String st;
-      st = "1: Mr. Kats for math trivia \n";
+      st = "\n1: Mr. Kats for math trivia \n";
       st += "2: Erica for pop-culture trivia \n";
       st += "3: Mr. Mykolyk for computer science trivia";
       System.out.println(st);
@@ -114,12 +114,9 @@ public class Woo{
 
     //new game
     Woo game = new Woo();
-    if (!game.playTurn()){
-      String s = "Game Over";
-      System.out.println(s);
-      return;
-    }
-
+    while (game.playTurn()) { }
+    String s = "Game Over";
+    System.out.println(s);
   }
 
 

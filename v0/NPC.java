@@ -14,6 +14,7 @@ public class NPC extends Chatbox{
 		_rightAnsCt = 0;
 		_questions = new ArrayList<String>(2);
 		_keywords = new ArrayList<ArrayList<String>>(2);
+		_equipment = new ArrayList<Equipment>(2);
 	}
 
 	public NPC(Player player) {
