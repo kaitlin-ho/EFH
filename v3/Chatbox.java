@@ -1,3 +1,4 @@
+/*
 import java.util.*;
 public class Chatbox implements ChatInt{
 
@@ -6,3 +7,4 @@ public class Chatbox implements ChatInt{
 	}
 
 }
+*/
