@@ -12,7 +12,8 @@ We wanted to make an adventure-based game because, adventure. An RPG would also 
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- javac Woo.java didn't compile all the necessary files (like the equipments). We resolved this issue by adding overloaded constructors to the NPC - We instantiated the equipments in Woo.java and added overloaded constructors to all of the NPCs with parameters that took in the instantiated equipments and used them to initialize the equipment instance variables in the NPC files. 
+- javac Woo.java didn't compile all the necessary files (like the equipments). We resolved this issue by adding overloaded constructors to the NPC - We instantiated the equipments in Woo.java and added overloaded constructors to all of the NPCs with parameters that took in the instantiated equipments and used them to initialize the equipment instance variables in the NPC files.
+- If you left a battle after it started and then went back to it you would be fighting a new monster. To fix this we made an overloaded version of the battle() method and an instance boolean _retreat which kept track of when the program had to create a new monster or when it had to keep using the one previously instantiated. Now when you retreat, you will return to the same monster once you return.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -21,9 +22,11 @@ UNRESOLVED ISSUES
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - this() must be the first line of an overloaded constructor
+- You can't extend multiple classes
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We got rid of Chatbox.java because we realized we wanted Ducky.java to extend Monster.java and not Chatbox.java.
 we changed ___ to ___ bc...
 
 LESSONS LEARNED
@@ -32,13 +35,12 @@ tales of wisdom gained...
 ||||||||||||||||||||||||||||||||||||||||||
 
 
-
  ______   ______   __   __   __       ______   _______
 /_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
-\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
- \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
-  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
-   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+\   _ \ \\    _\/_\ \ \\ \ \\ \ \    \   _ \ \\    __\/__
+ \ \ \ \ \\ \/___/\\ \ \\ \ \\ \ \    \ \ \ \ \\ \ /____/\
+  \ \ \ \ \\  ___\/_\ \_/  \ \\ \ \____\ \ \ \ \\ \\_  _\/
+   \ \/  | |\ \____/\\     / / \ \/___/\\ \_\ \ \\ \_\ \ \
     \____/_/ \_____\/ \___/_/   \_____\/ \_____\/ \_____\/
 ==============================================================
 
@@ -69,13 +71,13 @@ Everyone:: Discussed the plan and started constructing the UML diagrams in class
 Ariella :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, Weapons, Protection, and the test driver file. The stats are arbitrary and will be changed later (for balancing purposes).
 Hugo :: Drove
 Kaitlin :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, Weapons, Protection, and the test driver file. The stats are arbitrary and will be changed later (for balancing purposes).
-Everyone :: Made NPC codes for the Kats, Erica, and Mykolyk classes; This included making the constructors, overloaded constructors, and the Judge method to see whether an answer should be considered right or not; Added more to the playTurn method in Woo.java so that you can now interact with the NPCs and equip your equipment; Added the the talk method to add interactions with the NPCs. 
+Everyone :: Made NPC codes for the Kats, Erica, and Mykolyk classes; This included making the constructors, overloaded constructors, and the Judge method to see whether an answer should be considered right or not; Added more to the playTurn method in Woo.java so that you can now interact with the NPCs and equip your equipment; Added the the talk method to add interactions with the NPCs.
 ==============================================================
 
 1/16/22
 --------------------------------------------------------------
 Ariella :: Started coding the twist() method, wrote the game instructions, fixed an oversight with NPCs (a response with no correct answer was prompted when the NPC's questions were used up)
-Hugo ::
+Hugo :: Added about() methods to the equipment classes
 Kaitlin ::
 Everyone :: Added functionality so the player can call for help during trivia or battle; wrote the battle() method, which allows the player to interact with a monster (difficulties of the monster is chosen by the player).
 ==============================================================

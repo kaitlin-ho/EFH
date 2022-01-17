@@ -1,5 +1,5 @@
 import java.util.*;
-public class NPC extends Chatbox{
+public class NPC implements ChatInt {
 
 	protected int _rightAnsCt;
 	protected ArrayList<String> _questions;
