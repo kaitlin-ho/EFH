@@ -1,11 +1,10 @@
 TO DO LIST:
+- make an unequip option for the player
 - add questions and answers for trivia
 - balance the stats
 - COMMENTSS 
 
 IF WE TIME:
-- ducky battle mechanics
-	- the plan is for the ducky to throw questions at you. if you do not answer correctly in time, it says mean stuff and then attacks. if you do answer correctly in time, you attack it. if you successfully kill it, it returns back to normal
 - change normal battle mechanics
 	- specialize and normalize OR add special skills to some items 
 - easter eggs!
