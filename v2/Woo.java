@@ -108,19 +108,21 @@ public class Woo{
     String answer;
     Scanner convo;
     System.out.println(npc.getResponse());
-    convo = new Scanner(System.in);
-    answer = convo.nextLine();
-    answer = answer.trim().toLowerCase();
-    //If the player asks for help
-    while ((answer.indexOf("help") >=0)
-      || answer.indexOf(_ducky.getName().toLowerCase()) >= 0) {
-      System.out.println(help());
-      System.out.println("What is your answer?");
+    if (npc._rightAnsCt < 2) {
       convo = new Scanner(System.in);
       answer = convo.nextLine();
       answer = answer.trim().toLowerCase();
+      //If the player asks for help
+      while ((answer.indexOf("help") >=0)
+        || answer.indexOf(_ducky.getName().toLowerCase()) >= 0) {
+        System.out.println(help());
+        System.out.println("What is your answer?");
+        convo = new Scanner(System.in);
+        answer = convo.nextLine();
+        answer = answer.trim().toLowerCase();
+      }
+      npc.judge(answer);
     }
-    npc.judge(answer);
   }
 
   public String help() {
@@ -195,6 +197,22 @@ public class Woo{
     _player.equip(item);
   }
 
+  public void chooseEquipment() {
+    String s = "";
+    for (int n = 0; n < _player._inventory.size(); n++){
+      s += (n + 1) + ". ";
+      s += (_player._inventory.get(n)._name) + "\n";
+    }
+    System.out.println("What do you want to equip?");
+    System.out.println(s);
+    int itemNum = 1;
+    try{
+      itemNum = Integer.parseInt(in.readLine());
+    }
+    catch (IOException e) { }
+    equip(_player._inventory.get(itemNum-1));
+  }
+
   public String startMsg(){
     String s;
     s = "\nWhat would you like to do? \n";
@@ -234,19 +252,7 @@ public class Woo{
         System.out.println("You have nothing in your inventory.");
       }
       else {
-        String s = "";
-        for (int n = 0; n < _player._inventory.size(); n++){
-          s += (n + 1) + ". ";
-          s += (_player._inventory.get(n)._name) + "\n";
-        }
-        System.out.println("What do you want to equip?");
-        System.out.println(s);
-        int itemNum = 1;
-        try{
-          itemNum = Integer.parseInt(in.readLine());
-        }
-        catch (IOException e) { }
-        equip(_player._inventory.get(itemNum-1));
+        chooseEquipment();
       }
     }
 
@@ -283,6 +289,28 @@ public class Woo{
     return proceed; // change to actual boolean value
   }
 
+  public void twist() {
+    double beginTimer = System.currentTimeMillis();
+    while (System.currentTimeMillis() - beginTimer < 3000) {
+      continue;
+    }
+    System.out.println("LOL you thought you were finished?");
+    System.out.println(_ducky._name + " has turned on you!");
+    System.out.println("Defeat " + _ducky._name + " or die trying.");
+    _player.unequip(_player._equipment.get(0));
+    _player.unequip(_player._equipment.get(0));
+    String s = "";
+    s += "Choose your equipment wisely...\n";
+    System.out.print(s);
+    chooseEquipment();
+    s = "Now choose another.\n";
+    System.out.print(s);
+    chooseEquipment();
+    s = "You're out of time.\n";
+    s += _ducky._name + " has arrived.\n";
+    s += "You must attack!\n";
+
+  }
 
   public static void main( String[] args){
     //new game
@@ -290,6 +318,13 @@ public class Woo{
     while (game.playTurn()) { }
     String s = "Game Over";
     System.out.println(s);
+
+    System.out.println("\n" + "\n");
+
+    //twist!!!
+    if (game._defeatCtr == 6) {
+      game.twist();
+    }
   }
 
 }

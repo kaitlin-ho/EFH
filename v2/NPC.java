@@ -31,8 +31,8 @@ public class NPC extends Chatbox{
 			response += " " + _questions.get(1);
 		}
 		else {
-			response += " You have already answered all of my questions! "
-			+ "Search elsewhere for a source of equipment.";
+			response = " You have already answered all of my questions! "
+			+ "Search elsewhere for a source of equipment. ";
 		}
 		return response;
 	}

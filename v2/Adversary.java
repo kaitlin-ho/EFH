@@ -6,7 +6,7 @@ public class Adversary implements AdInt{
 	protected int _strength;
 
 	public Adversary() {
-		_hp = 1000;
+		_hp = 10000;
 		_defense = 60;
 		_attackRating = 1.0;
 		_strength = 244;
