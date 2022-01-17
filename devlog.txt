@@ -74,10 +74,10 @@ Everyone :: Made NPC codes for the Kats, Erica, and Mykolyk classes; This includ
 
 1/16/22
 --------------------------------------------------------------
-Ariella ::
+Ariella :: Started coding the twist() method, wrote the game instructions, fixed an oversight with NPCs (a response with no correct answer was prompted when the NPC's questions were used up)
 Hugo ::
 Kaitlin ::
-Everyone :: Wrote the Ducky.java file so the player can call for help during trivia or battle; wrote the battle method, which allows the player to interact with a monster (difficulties of the monster is chosen by the player).
+Everyone :: Added functionality so the player can call for help during trivia or battle; wrote the battle() method, which allows the player to interact with a monster (difficulties of the monster is chosen by the player).
 ==============================================================
 
 1/17/22
