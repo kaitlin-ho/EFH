@@ -1,15 +1,18 @@
-public class Ducky extends Chatbox{
+public class Ducky extends Monster {
+
+	public String _name = "";
 
 	public Ducky() {
-		super();
+		_hp = 5000;
+		_strength = 100;
+		_defense = 75;
+		_attackRating = 1;
 	}
 
 	public Ducky(String name) {
 		this();
 		_name = name;
 	}
-
-	public String _name = "";
 
 	public String getName() {
 		return _name;

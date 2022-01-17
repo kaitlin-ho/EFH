@@ -20,6 +20,7 @@ public class Woo{
   private int _difficulty; //not used right now
   private int _defeatCtr;
   private boolean _gameOver;
+  private boolean _retreat;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -40,6 +41,7 @@ public class Woo{
     _defeatCtr = 0;
     isr = new InputStreamReader( System.in ); //InputStreamReader reads bytes and decodes them into characters
     in = new BufferedReader( isr ); //BufferedReader reads text from a character-input stream
+    _retreat = false;
     newGame();
   }
 
@@ -170,6 +172,7 @@ public class Woo{
       }
       if (answer.trim().toLowerCase().indexOf("fight") < 0) {
         System.out.println("Retreat!");
+        _retreat = true;
         return;
       }
 
@@ -188,6 +191,61 @@ public class Woo{
         System.out.println(_player.getName() + " and the foe have defeated each other!");
       }
       else if (!(_player.isAlive()) && _monster.isAlive()) {
+        System.out.println("The foe has defeated " + _player.getName() + "!");
+      }
+    }
+  }
+
+  public void battle(Monster monster) {
+    String s = "";
+    String answer = "";
+    System.out.println("Get ready!\n");
+
+    //The battle begins!
+    s = "Your foe has arrived!\n";
+    s += "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
+    s += "The foe's HP: " + monster.getHP() + "\n";
+    System.out.println(s);
+    while (_player.isAlive() && monster.isAlive()) {
+      _retreat = false;
+      s = "Enter \"fight\" to attack or ";
+      s += "\"flight\" to run away: ";
+      System.out.println(s);
+      try {
+        answer = in.readLine();
+      }
+      catch ( IOException e ) { }
+      while ((answer.indexOf("help") >=0)
+      || answer.indexOf(_ducky.getName().toLowerCase()) >= 0) {
+        System.out.println(help());
+        System.out.println("Well? Fight or flight?");
+        try {
+          answer = in.readLine();
+        }
+        catch ( IOException e ) { }
+        answer = answer.trim().toLowerCase();
+      }
+      if (answer.trim().toLowerCase().indexOf("fight") < 0) {
+        System.out.println("Retreat!");
+        _retreat = true;
+        return;
+      }
+
+      //Attacks, get damages
+      int damageAgainstMonster = _player.attack(_monster);
+      int damageAgainstPlayer = monster.attack(_player);
+      //Show results
+      s = "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
+      s += "The foe's HP: " + monster.getHP() + "\n";
+      System.out.println(s);
+      if ( _player.isAlive() && !(monster.isAlive())) {
+        System.out.println(_player.getName() + " have defeated the foe!");
+        _defeatCtr++;
+      }
+      else if (!(_player.isAlive()) && !(monster.isAlive())) {
+        System.out.println(_player.getName() + " and the foe have defeated each other!");
+      }
+      else if (!(_player.isAlive()) && monster.isAlive()) {
         System.out.println("The foe has defeated " + _player.getName() + "!");
       }
     }
@@ -236,7 +294,12 @@ public class Woo{
     System.out.println("");
 
     if (i == 2) {
-      battle();
+      if (_retreat) {
+        battle(_monster);
+      }
+      else {
+        battle();
+      }
       if (!(_player.isAlive()) || _defeatCtr == 6) {
         proceed = false;
       }
@@ -289,16 +352,29 @@ public class Woo{
     return proceed; // change to actual boolean value
   }
 
-  public void twist() {
-    double beginTimer = System.currentTimeMillis();
-    while (System.currentTimeMillis() - beginTimer < 3000) {
+  public void delay(int seconds) {
+    long beginTimer = System.currentTimeMillis();
+    while (System.currentTimeMillis() - beginTimer < seconds * 1000) {
       continue;
     }
+  }
+
+  public void twist() {
+    delay(10);
     System.out.println("LOL you thought you were finished?");
+    delay(2);
+    String d = "";
+    d += "          __        \n";
+    d += "        <(o )___    \n";
+    d += "         ( ._> /    \n";
+    d += "          `---'     \n";
+    System.out.println(d);
     System.out.println(_ducky._name + " has turned on you!");
+    delay(2);
     System.out.println("Defeat " + _ducky._name + " or die trying.");
     _player.unequip(_player._equipment.get(0));
     _player.unequip(_player._equipment.get(0));
+    delay(2);
     String s = "";
     s += "Choose your equipment wisely...\n";
     System.out.print(s);
@@ -309,6 +385,7 @@ public class Woo{
     s = "You're out of time.\n";
     s += _ducky._name + " has arrived.\n";
     s += "You must attack!\n";
+    battle(_ducky);
 
   }
 
