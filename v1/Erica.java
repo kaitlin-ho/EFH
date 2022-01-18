@@ -1,3 +1,8 @@
+/*
+Erica's Fans and Hugo (EFH):
+Hugo Jenkins, Ariella Katz, Kaitlin Ho, Boary, Tom, Apple
+*/
+
 import java.util.*;
 public class Erica extends NPC{
   public Erica(Armor armor, BowArrow bowArrow) {

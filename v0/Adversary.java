@@ -1,3 +1,8 @@
+/*
+Erica's Fans and Hugo (EFH):
+Hugo Jenkins, Ariella Katz, Kaitlin Ho, Boary, Tom, Apple
+*/
+
 public class Adversary implements AdInt{
 
 	protected int _hp;

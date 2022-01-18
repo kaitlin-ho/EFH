@@ -1,3 +1,8 @@
+/*
+Erica's Fans and Hugo (EFH):
+Hugo Jenkins, Ariella Katz, Kaitlin Ho, Boary, Tom, Apple
+*/
+
 public class Ducky extends Chatbox{
 
 	public String _name = "";
