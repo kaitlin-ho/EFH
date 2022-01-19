@@ -20,3 +20,10 @@ public class Test {
 			wait(2000);
 	}
 }
+
+
+While (System.currentTimeMillis() < sts=art + 5000) {
+	if (System.in.available() > 0) {
+		String line = s.nextLine();
+	}
+}
