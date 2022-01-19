@@ -16,13 +16,15 @@ public class Test {
   }
 
   public static void main(String[] args){
+    String name = "";
     System.out.println("hello. enter your name:");
     Scanner in = new Scanner(System.in);
     wait(5000);
     System.out.println("wait is up");
     if (Thread.interrupted()) {
-      String name = in.nextLine();
+      name = in.nextLine();
     }
+  //  if (name.length() > 0) {System.out.println(name);}
     System.out.println("hello.");
   }
 

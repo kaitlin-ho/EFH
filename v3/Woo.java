@@ -262,22 +262,25 @@ public class Woo{
     int countDown = 5;
     while (_player.isAlive() && _ducky.isAlive()) {
       System.out.println(_ducky.getQuestion());
-      double beginTime = System.currentTimeMillis();
       Scanner scan = new Scanner(System.in);
-      while (System.currentTimeMillis() - beginTime < 5000) {
+      wait(5000);
+      if (Thread.interrupted()) {
         answer = scan.nextLine();
-        if (System.currentTimeMillis() - beginTime < 5000) {
-          _ducky.judge(answer, _ducky, _player);
-          return;
-        }
       }
-      //else {
+      if (answer.length() > 0) {
+        System.out.println("judging now...");
+        _ducky.judge(answer, _ducky, _player);
+        delay(1);
+        System.out.println("finished judging");
+      }
+      else {
         System.out.println("AHHHHHH");
         _ducky.attack(_player);
         s = "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
         s += _ducky.getName() + "'s HP: " + _ducky.getHP() + "\n";
         System.out.println(s);
-      //}
+      }
+      delay(1);
     }
   }
 
@@ -417,6 +420,13 @@ public class Woo{
     while (System.currentTimeMillis() - beginTimer < seconds * 1000) {
       continue;
     }
+  }
+
+  public static void wait(int millis) {
+    try {
+      Thread.sleep(millis);
+    }
+    catch (InterruptedException e) { }
   }
 
   public void twist() {
