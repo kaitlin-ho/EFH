@@ -1,5 +1,4 @@
 TO DO LIST:
-- make an unequip option for the player
 - add questions and answers for trivia
 - balance the stats
 - COMMENTSS 
