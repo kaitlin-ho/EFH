@@ -18,6 +18,7 @@ OBSTACLES OVERCOME
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - How does inheritance work with import statements?
+- HOW DO WE MAKE IT SO THAT THE USER CAN ONLY INPUT A RESPONSE WITHIN A 5-SECOND WINDOW???
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,12 +56,7 @@ Everyone:: Planned the proposal in class
 
 1/14/22
 --------------------------------------------------------------
-Ariella :: Finished the UMLs; first attempt at wrote interfaces;
-	   wrote Ducky.java and added minimal code to all connected
-	   files (superclasses, etc) in order to get past the compiler
-	   for testing; created temporary file Test.java to test new
-	   additions without manipulating Woo.java (runner); updated
-	   devlog
+Ariella :: Finished the UMLs; first attempt at wrote interfaces; wrote Ducky.java and added minimal code to all connected files (superclasses, etc) in order to get past the compiler for testing; created temporary file Test.java to test new additions without manipulating Woo.java (runner); updated devlog
 Hugo :: Started the code for taking inputs from the user in Woo.java
 Kaitlin :: Created work repo and filled out form; created files with headings; updated devlog
 Everyone:: Discussed the plan and started constructing the UML diagrams in class
@@ -88,4 +84,12 @@ Ariella :: Worked on twistBattle()
 Hugo :: Drove
 Kaitlin :: Worked on twistBattle()
 Everyone :: Fixed the issue with monster and retreat; began coding the game ending
+==============================================================
+
+1/18/22
+--------------------------------------------------------------
+Ariella :: Updated UMLs; attempted to implement timer using Thread.isInterrupted() as well
+Hugo :: Drove
+Kaitlin :: 
+Everyone :: Worked on adding a timer for twistBattle() using Thread.sleep()
 ==============================================================
