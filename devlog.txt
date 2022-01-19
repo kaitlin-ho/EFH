@@ -36,60 +36,60 @@ tales of wisdom gained...
 ||||||||||||||||||||||||||||||||||||||||||
 
 
- ______   ______   __   __   __       ______   _______
-/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
-\   _ \ \\    _\/_\ \ \\ \ \\ \ \    \   _ \ \\    __\/__
- \ \ \ \ \\ \/___/\\ \ \\ \ \\ \ \    \ \ \ \ \\ \ /____/\
-  \ \ \ \ \\  ___\/_\ \_/  \ \\ \ \____\ \ \ \ \\ \\_  _\/
-   \ \/  | |\ \____/\\     / / \ \/___/\\ \_\ \ \\ \_\ \ \
-    \____/_/ \_____\/ \___/_/   \_____\/ \_____\/ \_____\/
-==============================================================
+ ______    ______    __   __    __        ______    _______
+/_____/\  /_____/\  /_/\ /_/\  /_/\      /_____/\  /______/\
+\  __ \ \ \  ___\/_ \ \ \\ \ \ \ \ \     \  __ \ \ \  ____\/__
+ \ \ \ \ \ \ \/___/\ \ \ \\ \ \ \ \ \     \ \ \ \ \ \ \ /____/\
+  \ \ \ \ \ \  ___\/_ \ \_/  \ \ \ \ \____ \ \ \ \ \ \ \\_  _\/
+   \ \/  | | \ \____/\ \     / /  \ \/___/\ \ \_\ \ \ \ \_\ \ \
+    \____/_/  \_____\/  \___/_/    \_____\/  \_____\/  \_____\/
+===============================================================
 
 
 01/13/22
---------------------------------------------------------------
+---------------------------------------------------------------
 Ariella :: Typed and cleaned up proposal
 Hugo ::
 Kaitlin :: Created team repo
 Everyone:: Planned the proposal in class
-==============================================================
+===============================================================
 
 1/14/22
---------------------------------------------------------------
+---------------------------------------------------------------
 Ariella :: Finished the UMLs; first attempt at wrote interfaces; wrote Ducky.java and added minimal code to all connected files (superclasses, etc) in order to get past the compiler for testing; created temporary file Test.java to test new additions without manipulating Woo.java (runner); updated devlog
 Hugo :: Started the code for taking inputs from the user in Woo.java
 Kaitlin :: Created work repo and filled out form; created files with headings; updated devlog
 Everyone:: Discussed the plan and started constructing the UML diagrams in class
-==============================================================
+===============================================================
 
 1/15/22
---------------------------------------------------------------
+---------------------------------------------------------------
 Ariella :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, Weapons, Protection, and the test driver file. The stats are arbitrary and will be changed later (for balancing purposes).
 Hugo :: Drove
 Kaitlin :: Added and fixed UML diagrams; started working on Player, Equipment & its subclasses, Monster, Weapons, Protection, and the test driver file. The stats are arbitrary and will be changed later (for balancing purposes).
 Everyone :: Made NPC codes for the Kats, Erica, and Mykolyk classes; This included making the constructors, overloaded constructors, and the Judge method to see whether an answer should be considered right or not; Added more to the playTurn method in Woo.java so that you can now interact with the NPCs and equip your equipment; Added the the talk method to add interactions with the NPCs.
-==============================================================
+===============================================================
 
 1/16/22
---------------------------------------------------------------
+---------------------------------------------------------------
 Ariella :: Started coding the twist() method, wrote the game instructions, fixed an oversight with NPCs (a response with no correct answer was prompted when the NPC's questions were used up)
 Hugo :: Added about() methods to the equipment classes
 Kaitlin :: Added equip and see inventory functionality
 Everyone :: Added functionality so the player can call for help during trivia or battle; wrote the battle() method, which allows the player to interact with a monster (difficulties of the monster is chosen by the player).
-==============================================================
+===============================================================
 
 1/17/22
---------------------------------------------------------------
+---------------------------------------------------------------
 Ariella :: Worked on twistBattle()
 Hugo :: Drove
 Kaitlin :: Worked on twistBattle()
 Everyone :: Fixed the issue with monster and retreat; began coding the game ending
-==============================================================
+===============================================================
 
 1/18/22
---------------------------------------------------------------
-Ariella :: Updated UMLs; attempted to implement timer using Thread.isInterrupted() as well
+---------------------------------------------------------------
+Ariella :: Updated UMLs; attempted to implement timer using Thread.isInterrupted() as well; aesthetized DEVLOG heading to prevent eye strain when reading it
 Hugo :: Drove
 Kaitlin :: 
 Everyone :: Worked on adding a timer for twistBattle() using Thread.sleep()
-==============================================================
+===============================================================
