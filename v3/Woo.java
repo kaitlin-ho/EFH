@@ -301,14 +301,35 @@ public class Woo{
     equip(_player._inventory.get(itemNum-1));
   }
 
+  public void unequip(Equipment item){
+    _player.unequip(item);
+  }
+
+  public void chooseUnequipment() {
+    String s = "";
+    for (int n = 0; n < _player._equipment.size(); n++){
+      s += (n + 1) + ". ";
+      s += (_player._equipment.get(n)._name) + "\n";
+    }
+    System.out.println("What do you want to unequip?");
+    System.out.println(s);
+    int itemNum = 1;
+    try{
+      itemNum = Integer.parseInt(in.readLine());
+    }
+    catch (IOException e) { }
+    unequip(_player._equipment.get(itemNum-1));
+  }
+
   public String startMsg(){
     String s;
     s = "\nWhat would you like to do? \n";
     s += "1: See an NPC \n";
     s += "2: Battle a monster \n";
     s += "3: Equip \n";
-    s += "4: Check your inventory\n";
-    s += "5: Check what you have equipped\n";
+    s += "4: Unequip \n";
+    s += "5: Check your inventory\n";
+    s += "6: Check what you have equipped\n";
     s += "Selection: ";
     return s;
   }
@@ -349,11 +370,20 @@ public class Woo{
       }
     }
 
-    else if ( i == 4 ) {
+    else if (i == 4) {
+      if (_player._equipment.size() == 0){
+        System.out.println("You have nothing equipped.");
+      }
+      else {
+        chooseUnequipment();
+      }
+    }
+
+    else if ( i == 5 ) {
       System.out.println(_player.invToString());
     }
 
-    else if (i==5){
+    else if (i==6){
       System.out.println(_player.eqToString());
     }
 
