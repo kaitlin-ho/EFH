@@ -256,16 +256,20 @@ public class Woo{
     }
   }
 
-  public void twistBattle() {
+  public void twistBattle() throws IOException {
     String s = "";
     String answer = "";
     int countDown = 5;
     while (_player.isAlive() && _ducky.isAlive()) {
+      answer = "";
       System.out.println(_ducky.getQuestion());
-      Scanner scan = new Scanner(System.in);
-      wait(5000);
-      if (Thread.interrupted()) {
-        answer = scan.nextLine();
+      Scanner y = new Scanner(System.in);
+      long start = System.currentTimeMillis();
+      while (System.currentTimeMillis() < start + 3000) {
+        if (System.in.available() > 0) {
+          String line = y.nextLine();
+          answer = line;
+        }
       }
       if (answer.length() > 0) {
         System.out.println("judging now...");
@@ -429,7 +433,7 @@ public class Woo{
     catch (InterruptedException e) { }
   }
 
-  public void twist() {
+  public void twist() throws IOException {
     delay(10);
     System.out.println("LOL you thought you were finished?");
     delay(2);
@@ -459,9 +463,11 @@ public class Woo{
 
   }
 
-  public static void main( String[] args){
+  public static void main( String[] args) throws IOException {
     //new game
     Woo game = new Woo();
+    game.twistBattle();
+    /*
     while (game.playTurn()) { }
     String s = "Game Over";
     System.out.println(s);
@@ -472,6 +478,7 @@ public class Woo{
     if (game._defeatCtr == 6) {
       game.twist();
     }
+    */
   }
 
 }
