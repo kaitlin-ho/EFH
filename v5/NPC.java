@@ -27,36 +27,35 @@ public class NPC implements ChatInt {
 		_player = player;
 	}
 
-//gets a response from the NPC the player requested from
+	//gets a response from the NPC the player requested from
 	public String getResponse() {
 		String response = _greeting;
 		if (_rightAnsCt == 0) {
-			response += " " + _questions.get(0);
+			response += "" + _questions.get(0);
 		}
 		else if (_rightAnsCt == 1) {
-			response += " " + _questions.get(1);
+			response += "" + _questions.get(1);
 		}
 		//message that is printed after the player has obtained both rewards
 		else {
-			response = " You have already answered all of my questions! "
+			response = "You have already answered all of my questions! "
 			+ "Search elsewhere for a source of equipment. ";
 		}
 		return response;
 	}
 
 //NPC will add the reward equipment into the player's inventory if they correctly answer the question
-	public void judge(String answer) {
+	public String judge(String answer) {
 		answer = answer.trim().toLowerCase();
 		for (String i : _keywords.get(_rightAnsCt)) {
 			if (answer.indexOf(i) >= 0) {
-				System.out.println(_winMsg);
 				_player.invent(_equipment.get(_rightAnsCt));
 				System.out.println(_equipment.get(_rightAnsCt).about());
 				_rightAnsCt += 1;
-				return;
+				return _winMsg;
 			}
 		}
-		System.out.println(_lossMsg);
+		return _lossMsg);
 	}
 
 }
