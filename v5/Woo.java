@@ -448,13 +448,6 @@ public class Woo{
     }
   }
 
-  public static void wait(int millis) {
-    try {
-      Thread.sleep(millis);
-    }
-    catch (InterruptedException e) { }
-  }
-
 //the ducky is now your enemy
   public void twist() throws IOException {
     delay(10*1000);
