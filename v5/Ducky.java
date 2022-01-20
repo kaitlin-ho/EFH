@@ -63,23 +63,22 @@ public class Ducky extends Monster {
 	}
 
 	//for the twist, in order to determine the correctness of the player's answer
-	public void judge(String answer, Ducky ducky, Player player) {
+	public String judge(String answer, Ducky ducky, Player player) {
 		String s = "";
 		answer = answer.trim().toLowerCase();
 		for (String k : _keywords.get(_whichQuest)) {
 			if (answer.indexOf(k) >= 0) {
-				System.out.println("ur right");
 				_lives -= 1;
-				s = "\n" + player.getName() + "'s Lives: " + player.getLives() + "\n";
+				s = "ur right \n";
+				s += "\n" + player.getName() + "'s Lives: " + player.getLives() + "\n";
     				s += ducky.getName() + "'s Lives: " + ducky.getLives() + "\n";
-				System.out.println(s);
-				return;
+				return s;
 			}
-			System.out.println("AHHHHHH");
 			player._lives -= 1;
-			s = "\n" + player.getName() + "'s Lives: " + player.getLives() + "\n";
+			s = "AHHHHHHH \n";
+			s += "\n" + player.getName() + "'s Lives: " + player.getLives() + "\n";
 			s += ducky.getName() + "'s Lives: " + ducky.getLives() + "\n";
-			System.out.println(s);
+			return s;
 		}
 	}
 
