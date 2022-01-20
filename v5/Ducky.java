@@ -52,6 +52,7 @@ public class Ducky extends Monster {
 		return _name;
 	}
 
+	//for the twist, in order to pose a question to the player
 	public String getQuestion() {
 		final int numQuests = 5;
 		_whichQuest = (int)(Math.random() * numQuests);
@@ -61,6 +62,7 @@ public class Ducky extends Monster {
 		return quest;
 	}
 
+	//for the twist, in order to determine the correctness of the player's answer
 	public void judge(String answer, Ducky ducky, Player player) {
 		String s = "";
 		answer = answer.trim().toLowerCase();
@@ -81,6 +83,7 @@ public class Ducky extends Monster {
 		}
 	}
 
+	//for when the player asks for help
 	public String getResponse() {
 		final int numResps = 6;
 		int whichResp = (int)(Math.random() * numResps);
