@@ -22,7 +22,7 @@ public class Woo{
   public BowArrow _bowArrow;
   public KtS _kts;
 
-  private int _difficulty; //not used right now
+  private int _difficulty;
   private int _defeatCtr;
   private boolean _gameOver;
   private boolean _retreat;
@@ -30,16 +30,18 @@ public class Woo{
   private InputStreamReader isr;
   private BufferedReader in;
 
-  public Woo(){
+  public Woo(){ //initializing variables needed
     _gameOver = false;
     _player = new Player();
     _ducky = new Ducky();
+    //equipment
     _shield = new Shield();
     _armor = new Armor();
     _invisCloak = new InvisCloak();
     _sword = new Sword();
     _bowArrow = new BowArrow();
     _kts = new KtS();
+    //NPCs
     _kats = new Kats(_player, _shield, _sword);
     _mykolyk = new Mykolyk(_player, _invisCloak, _kts);
     _erica = new Erica(_player, _armor, _bowArrow);
@@ -50,10 +52,11 @@ public class Woo{
     newGame();
   }
 
-  public void newGame(){
+  public void newGame(){ //starts a new game
     String s = "";
     String name = "";
     String duckyName = "";
+    //instructions and description of the game
     s = "Ducky RPG\n";
     s += "\tIn this game, you will battle monsters using equipment obtained by\n";
     s += "correctly answering trivia questions posed by NPCS.\n";
@@ -111,6 +114,7 @@ public class Woo{
 
   }
 
+//method that will allow the player to interact with the NPC
   public void talk(NPC npc) {
     String answer;
     Scanner convo;
@@ -119,7 +123,7 @@ public class Woo{
       convo = new Scanner(System.in);
       answer = convo.nextLine();
       answer = answer.trim().toLowerCase();
-      //If the player asks for help
+      //If the player asks for help from the ducky
       while ((answer.indexOf("help") >=0)
         || answer.indexOf(_ducky.getName().toLowerCase()) >= 0) {
         System.out.println(help());
@@ -128,6 +132,7 @@ public class Woo{
         answer = convo.nextLine();
         answer = answer.trim().toLowerCase();
       }
+      //returns to the NPC interaction if the player has not asked for help from the ducky again
       npc.judge(answer);
     }
   }
@@ -136,6 +141,7 @@ public class Woo{
     return _ducky.getResponse();
   }
 
+// battle function of the game
   public void battle() {
     String s = "";
     String answer = "";
@@ -165,6 +171,7 @@ public class Woo{
         answer = in.readLine();
       }
       catch ( IOException e ) { }
+      //if the player asks the ducky for help
       while ((answer.indexOf("help") >=0)
       || answer.indexOf(_ducky.getName().toLowerCase()) >= 0) {
         System.out.println(help());
@@ -175,6 +182,7 @@ public class Woo{
         catch ( IOException e ) { }
         answer = answer.trim().toLowerCase();
       }
+      //retreating from the fight
       if (answer.trim().toLowerCase().indexOf("fight") < 0) {
         System.out.println("Retreat!");
         _retreat = true;
@@ -201,6 +209,7 @@ public class Woo{
     }
   }
 
+//overloaded battle to make sure that when the player flees a fight, they will return to the same monster
   public void battle(Monster monster) {
     String s = "";
     String answer = "";
@@ -260,6 +269,7 @@ public class Woo{
     _player.equip(item);
   }
 
+//allows the player to equip equipment if it is in their inventory
   public void chooseEquipment() {
     String s = "";
     for (int n = 0; n < _player._inventory.size(); n++){
@@ -276,6 +286,7 @@ public class Woo{
     equip(_player._inventory.get(itemNum-1));
   }
 
+//selection options for the player (between actions)
   public String startMsg(){
     String s;
     s = "\nWhat would you like to do? \n";
@@ -315,6 +326,7 @@ public class Woo{
       return proceed;
     }
 
+//so the player cannot equip anything not in their inventory
     else if (i == 3) {
       if (_player._inventory.size() == 0){
         System.out.println("You have nothing in your inventory.");
@@ -332,6 +344,7 @@ public class Woo{
       System.out.println(_player.eqToString());
     }
 
+//NPC choices
     else {
       System.out.println("Who do you wish to consult");
       String st;
@@ -357,6 +370,7 @@ public class Woo{
     return proceed; // change to actual boolean value
   }
 
+//method used for delaying text so the game can flow better
   public void delay(int seconds) {
     long beginTimer = System.currentTimeMillis();
     while (System.currentTimeMillis() - beginTimer < seconds * 1000) {
@@ -364,6 +378,7 @@ public class Woo{
     }
   }
 
+//the ducky is now your enemy
   public void twist() {
     delay(10);
     System.out.println("LOL you thought you were finished?");
@@ -377,6 +392,7 @@ public class Woo{
     System.out.println(_ducky._name + " has turned on you!");
     delay(2);
     System.out.println("Defeat " + _ducky._name + " or die trying.");
+    //resets the player's equipped items
     _player.unequip(_player._equipment.get(0));
     _player.unequip(_player._equipment.get(0));
     delay(2);
@@ -390,6 +406,7 @@ public class Woo{
     s = "You're out of time.\n";
     s += _ducky._name + " has arrived.\n";
     s += "You must attack!\n";
+    //fight the ducky
     battle(_ducky);
 
   }
