@@ -25,7 +25,7 @@ public class Adversary implements AdInt{
 	}
 
 	public boolean isAlive() {
-		return ((_hp > 0) || (_lives > 0));
+		return ((_hp > 0) && (_lives > 0));
 	}
 
 	public int getHP() {
