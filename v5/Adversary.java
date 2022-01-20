@@ -52,7 +52,7 @@ public class Adversary implements AdInt{
 	}
 
 	public int attack(Adversary opponent) {
-		int damage = (int)(_strength * attackRating()) - opponent._defense - opponent._defenseMod + _strengthMod;
+		int damage = (int)((_strength + _strengthMod) * attackRating()) - (opponent._defense + opponent._defenseMod);
 		if (damage < 0) { damage = 0; }
 		opponent.lowerHP(damage);
 		return damage;
