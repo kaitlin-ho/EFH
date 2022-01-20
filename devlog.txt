@@ -90,14 +90,14 @@ Everyone :: Fixed the issue with monster and retreat; began coding the game endi
 ---------------------------------------------------------------
 Ariella :: Updated UMLs; attempted to implement timer using Thread.isInterrupted() as well; aesthetized DEVLOG heading to prevent eye strain when reading it
 Hugo :: Drove
-Kaitlin :: 
+Kaitlin ::
 Everyone :: Worked on adding a timer for twistBattle() using Thread.sleep()
 ===============================================================
 
 1/19/22
 ---------------------------------------------------------------
 Ariella :: Updated ReadMe, fixed a minor issue with twist()
-Hugo :: Got help from the CS Dojo and finished the timer
+Hugo :: Got help from the CS Dojo and finished the timer; fixed bug with functionality of equipment
 Kaitlin :: Got help from the CS Dojo and finished the timer, started commenting Woo, NPC, and Player
 Everyone :: Worked on the timer for the end game fight in class
 ===============================================================

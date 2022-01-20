@@ -9,12 +9,16 @@ public class Adversary implements AdInt{
 	protected int _defense;
 	protected double _attackRating;
 	protected int _strength;
+	protected int _defenseMod;
+	protected int _strengthMod;
 
 	public Adversary() {
 		_hp = 10000;
 		_defense = 60;
 		_attackRating = 1.0;
 		_strength = 244;
+		_defenseMod = 0;
+		_strengthMod = 0;
 	}
 
 	public boolean isAlive() {
@@ -24,7 +28,7 @@ public class Adversary implements AdInt{
 	public int getHP() {
 		return _hp;
 	}
-	
+
 	public int getDefense() {
 		return _defense;
 	}
@@ -40,7 +44,7 @@ public class Adversary implements AdInt{
 	}
 
 	public int attack(Adversary opponent) {
-		int damage = (int)(_strength * attackRating()) - opponent._defense;
+		int damage = (int)(_strength * attackRating()) - opponent._defense - opponent._defenseMod + _strengthMod;
 		if (damage < 0) { damage = 0; }
 		opponent.lowerHP(damage);
 		return damage;

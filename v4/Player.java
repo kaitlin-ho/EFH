@@ -65,6 +65,10 @@ public class Player extends Adversary{
 				_inventory.remove(equipment);
 			}
 		}
+		for (Equipment e : _equipment) {
+			_strengthMod += e._strengthAlt;
+			_defenseMod += e._defenseAlt;
+		}
 	}
 
 //removes equipment already equipped and updates stats
@@ -94,5 +98,16 @@ public class Player extends Adversary{
 		str = str.substring(0, str.length()-2);
 		return str;
 	}
-
+/*
+	public int attack(Adversary opponent) {
+		int modifier = 0;
+		for (Equipment e : _equipment) {
+			modifier += e._strengthAlt;
+		}
+		int damage = (int)(_strength * attackRating()) - opponent._defense + modifier;
+		if (damage < 0) { damage = 0; }
+		opponent.lowerHP(damage);
+		return damage;
+	}
+*/
 }

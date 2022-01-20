@@ -1,11 +1,12 @@
 TO DO LIST:
 - add questions and answers for trivia
 - balance the stats
-- COMMENTSS 
+- COMMENTSS
+- Refactor equip() method in player
 
 IF WE TIME:
 - change normal battle mechanics
-	- specialize and normalize OR add special skills to some items 
+	- specialize and normalize OR add special skills to some items
 - easter eggs!
 	- typing something gives player items (like strength pot, healing pot) ["..." gives you something useless]
 
