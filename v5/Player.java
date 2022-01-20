@@ -9,12 +9,12 @@ public class Player extends Adversary{
 
 	public String _name;
 	public ArrayList<Equipment> _inventory;
-	public ArrayList<Equipment> _equipment;
+	public ArrayList<Equipment> _equipment; //"equipment" in this case refers to items that are equipped
 
 	public Player() {
 		super();
-		_inventory = new ArrayList<Equipment>(6);
-		_equipment = new ArrayList<Equipment>(2);
+		_inventory = new ArrayList<Equipment>(6); //There are 6 items, inventory has space for all of them
+		_equipment = new ArrayList<Equipment>(2); //Max 2 items equipped at once
 	}
 
 	public Player(String name) {
@@ -31,7 +31,7 @@ public class Player extends Adversary{
 		_name = name;
 	}
 
-//add equipment to inventory
+	//add equipment to inventory
 	public void invent(Equipment equipment) {
 		_inventory.add(equipment);
 	}
@@ -45,8 +45,9 @@ public class Player extends Adversary{
 		}
 		//adding the stats to the player with respect to the equipment they've equipped
 		else {
+			//transfer equipped item from inventory
 			_equipment.add(equipment);
-			_inventory.remove(equipment);
+			_inventory.remove(equipment); 
 		}
 		
 		//Reset and recalculate _strengthMod and _defenseMod w/ updated equipped items
@@ -58,8 +59,9 @@ public class Player extends Adversary{
 		}
 	}
 
-//removes equipment already equipped and updates stats
+	//removes equipment already equipped and updates stats
 	public void unequip(Equipment equipment) {
+		//transfer equipped item back to inventory
 		_equipment.remove(equipment);
 		_inventory.add(equipment);
 		
@@ -72,7 +74,7 @@ public class Player extends Adversary{
 		}
 	}
 
-//returns a string version of the player's inventory
+	//returns a string version of the player's inventory
         public String invToString() {
                 String str = _name + "'s inventory: ";
                 for (Equipment equipment : _inventory) {
@@ -82,7 +84,7 @@ public class Player extends Adversary{
                 return str;
         }
 
-//returns a string version of the player's equipped items
+	//returns a string version of the player's equipped items
 	public String eqToString() {
 		String str = "Currently equipped: ";
 		for (Equipment equipment : _equipment) {
