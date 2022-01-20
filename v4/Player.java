@@ -42,6 +42,7 @@ public class Player extends Adversary{
 
 	public void equip(Equipment equipment) {
 		//Make sure it's already in the inventory
+		/*
 		boolean invented = false;
 		for (int i = 0; i < _inventory.size(); i++) {
 			if ((_inventory.get(i)).equals(equipment)) {
@@ -52,6 +53,7 @@ public class Player extends Adversary{
 			System.out.println("This item is not in your inventory.");
 		}
 		else {
+		*/
 			//You can only have 2 things max equipped at once
 			if (_equipment.size() == 2) {
 				System.out.println("You already have 2 items equipped. "
@@ -64,7 +66,7 @@ public class Player extends Adversary{
 				this._defenseAlt += equipment._defenseAlt;
 				_inventory.remove(equipment);
 			}
-		}
+		// }
 		for (Equipment e : _equipment) {
 			_strengthMod += e._strengthAlt;
 			_defenseMod += e._defenseAlt;
