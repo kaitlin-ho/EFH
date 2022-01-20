@@ -100,7 +100,7 @@ Everyone :: Worked on adding a timer for twistBattle() using Thread.sleep()
 1/19/22
 ---------------------------------------------------------------
 Ariella :: Updated ReadMe, fixed a minor issue with twist()
-Hugo :: Got help from the CS Dojo and finished the timer; fixed bug with functionality of equipment
+Hugo :: Got help from the CS Dojo and finished the timer; fixed bug with functionality of equipment; Refactored equip() method in Player.java
 Kaitlin :: Got help from the CS Dojo and finished the timer, started commenting Woo, NPC, and Player
 Everyone :: Worked on the timer for the end game fight in class
 ===============================================================
