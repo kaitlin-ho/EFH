@@ -298,11 +298,17 @@ public class Woo{
       else {
         System.out.println("Too Slow HAHAAAHAAAAAA");
         _player._lives -= 1;
-        s = "\n" + _player.getName() + "'s HP: " + _player.getLives() + "\n";
-        s += _ducky.getName() + "'s HP: " + _ducky.getLives () + "\n";
+        s = "\n" + _player.getName() + "'s Lives: " + _player.getLives() + "\n";
+        s += _ducky.getName() + "'s Lives: " + _ducky.getLives () + "\n";
         System.out.println(s);
       }
       delay(1000);
+    }
+    if (!_player.isAlive()) {
+      System.out.println("Betrayal... " + _ducky.getName() + " murdered you ruthlessly.");
+    }
+    if (!_ducky.isAlive()) {
+      System.out.println("You've killed " + _ducky.getName() +". After all they did for you. Maybe you're the true monster.");
     }
   }
 
@@ -497,6 +503,7 @@ public class Woo{
     if (game._defeatCtr == 6) {
       game.twist();
     }
+    System.out.println("Game Over (for real this time)");
   }
 
 }
