@@ -276,7 +276,7 @@ public class Woo{
     String s = "";
     String answer = "";
     int countDown = 5;
-    while (_player.isAlive(1) && _ducky.isAlive(1)) {
+    while (_player.isAlive() && _ducky.isAlive()) {
       answer = ""; //answer that will be judged by the ducky
       System.out.println(_ducky.getQuestion()); //question from ducky
       Scanner y = new Scanner(System.in);
