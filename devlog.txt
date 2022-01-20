@@ -14,16 +14,18 @@ OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - javac Woo.java didn't compile all the necessary files (like the equipments). We resolved this issue by adding overloaded constructors to the NPC - We instantiated the equipments in Woo.java and added overloaded constructors to all of the NPCs with parameters that took in the instantiated equipments and used them to initialize the equipment instance variables in the NPC files.
 - If you left a battle after it started and then went back to it you would be fighting a new monster. To fix this we made an overloaded version of the battle() method and an instance boolean _retreat which kept track of when the program had to create a new monster or when it had to keep using the one previously instantiated. Now when you retreat, you will return to the same monster once you return.
+- Figured out how to only allow user input within a given window of time! We used a new method, System.in.available(), to determine whether there were any readable inputs during the time window, and if there were and the input was more than just "", we "judged" the input. When the window of time closed, the scanner was no longer active. 
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - How does inheritance work with import statements?
-- HOW DO WE MAKE IT SO THAT THE USER CAN ONLY INPUT A RESPONSE WITHIN A 5-SECOND WINDOW???
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- this() must be the first line of an overloaded constructor
-- You can't extend multiple classes
+- this() must be the first line of an overloaded constructor.
+- You can't extend multiple classes.
+- Thread.sleep() allows you to temporarily pause a thread. Anything done in the meantime will not be carried back over to the main thread once it resumes.
+- System.in.available() returns the number of available bytes inputted by a user into a scanner.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,6 +36,7 @@ LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tales of wisdom gained...
 ||||||||||||||||||||||||||||||||||||||||||
+- When in doubt, make a QAF post. When not in doubt, make a QAF post.
 
 
  ______    ______    __   __    __        ______    _______
