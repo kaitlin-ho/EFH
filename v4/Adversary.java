@@ -2,7 +2,13 @@
 Erica's Fans and Hugo (EFH):
 Hugo Jenkins, Ariella Katz, Kaitlin Ho, Boary, Tom, Apple
 */
-
+while (System.currentTimeMillis() < start + 3000) {
+        if (System.in.available() > 0) {
+          String line = y.nextLine();
+          answer = line;
+          break;
+        }
+      }
 public class Adversary implements AdInt{
 
 	protected int _hp;
@@ -44,7 +50,7 @@ public class Adversary implements AdInt{
 	}
 
 	public int attack(Adversary opponent) {
-		int damage = (int)(_strength * attackRating()) - opponent._defense - opponent._defenseMod + _strengthMod;
+		int damage = (int)((_strength + _strengthMod) * attackRating()) - (opponent._defense + opponent._defenseMod); //Mods come from equipment
 		if (damage < 0) { damage = 0; }
 		opponent.lowerHP(damage);
 		return damage;
