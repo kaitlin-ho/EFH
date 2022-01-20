@@ -469,8 +469,12 @@ public class Woo{
     System.out.println(_ducky._name + " has turned on you!");
     delay(2000);
     System.out.println("Defeat " + _ducky._name + " or die trying.");
-    _player.unequip(_player._equipment.get(0));
-    _player.unequip(_player._equipment.get(0));
+    if (_player._equipment.size() > 0) {
+      _player.unequip(_player._equipment.get(0));
+    }
+    if (_player._equipment.size() > 0) {
+      _player.unequip(_player._equipment.get(0));
+    }
     delay(2000);
     String s = "";
     s += "Choose your equipment wisely...\n";
