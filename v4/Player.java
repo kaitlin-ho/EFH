@@ -26,6 +26,7 @@ public class Player extends Adversary{
 		_name = name;
 	}
 
+//returns the name of the player
 	public String getName() {
 		return _name;
 	}
@@ -34,6 +35,7 @@ public class Player extends Adversary{
 		_name = name;
 	}
 
+//add equipment to inventory
 	public void invent(Equipment equipment) {
 		_inventory.add(equipment);
 	}
@@ -55,6 +57,7 @@ public class Player extends Adversary{
 				System.out.println("You already have 2 items equipped. "
 				+ "Unequip something if you want to replace it.");
 			}
+			//adding the stats to the player with respect to the equipment they've equipped
 			else {
 				_equipment.add(equipment);
 				this._strengthAlt += equipment._strengthAlt;
@@ -64,6 +67,7 @@ public class Player extends Adversary{
 		}
 	}
 
+//removes equipment already equipped and updates stats
 	public void unequip(Equipment equipment) {
 		_equipment.remove(equipment);
 		this._strengthAlt -= equipment._strengthAlt;
@@ -71,6 +75,7 @@ public class Player extends Adversary{
 		_inventory.add(equipment);
 	}
 
+//returns a string version of the player's inventory
         public String invToString() {
                 String str = _name + "'s inventory: ";
                 for (Equipment equipment : _inventory) {
@@ -80,6 +85,7 @@ public class Player extends Adversary{
                 return str;
         }
 
+//returns a string version of the player's equipped items
 	public String eqToString() {
 		String str = "Currently equipped: ";
 		for (Equipment equipment : _equipment) {
