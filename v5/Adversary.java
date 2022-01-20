@@ -5,13 +5,15 @@ Hugo Jenkins, Ariella Katz, Kaitlin Ho, Boary, Tom, Apple
 
 public class Adversary implements AdInt{
 
-	protected int _hp;
+	protected int _hp; //for battles with regular monsters (weak, ok, boss)
 	protected int _defense;
 	protected double _attackRating;
 	protected int _strength;
 	protected int _defenseMod;
 	protected int _strengthMod;
-	protected int _lives;
+	protected int _lives; //for twist battle with ducky
+	//player switches from an hp to a lives system when it battles the ducky
+	//non-ducky monsters only use hp and the ducky only uses lives
 
 	public Adversary() {
 		_hp = 10000;
@@ -23,12 +25,7 @@ public class Adversary implements AdInt{
 	}
 
 	public boolean isAlive() {
-		return (_hp > 0);
-	}
-
-	// overloaded isAlive() method to check _lives instead of _hp
-	public boolean isAlive(int i) {
-		return (_lives > 0);
+		return ((_hp > 0) || (_lives > 0));
 	}
 
 	public int getHP() {
@@ -48,6 +45,7 @@ public class Adversary implements AdInt{
 		if (_hp < 0) { _hp = 0; }
 	}
 
+	//finds a randomized value for attackRating, but within a certain range (90-110%)
 	public double attackRating() {
 		_attackRating = Math.random() * .20 + .90;
 		return _attackRating;
