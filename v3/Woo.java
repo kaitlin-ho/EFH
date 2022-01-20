@@ -269,6 +269,7 @@ public class Woo{
         if (System.in.available() > 0) {
           String line = y.nextLine();
           answer = line;
+          break;
         }
       }
       if (answer.length() > 0) {
