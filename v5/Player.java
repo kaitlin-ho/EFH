@@ -25,7 +25,7 @@ public class Player extends Adversary{
 		_name = name;
 	}
 
-//returns the name of the player
+	//returns the name of the player
 	public String getName() {
 		return _name;
 	}
@@ -41,7 +41,7 @@ public class Player extends Adversary{
 
 	public void equip(Equipment equipment) {
 
-			//You can only have 2 things max equipped at once
+		//You can only have 2 things max equipped at once
 		if (_equipment.size() == 2) {
 			System.out.println("You already have 2 items equipped. "
 			+ "Unequip something if you want to replace it.");
@@ -77,13 +77,13 @@ public class Player extends Adversary{
 	}
 
 	//returns a string version of the player's inventory
-  public String invToString() {
-    String str = _name + "'s inventory: ";
-    for (Equipment equipment : _inventory) {
+	public String invToString() {
+		String str = _name + "'s inventory: ";
+		for (Equipment equipment : _inventory) {
 			str += equipment._name + ", ";
-    }
-    str = str.substring(0, str.length()-2);
-    return str;
+		}
+		str = str.substring(0, str.length()-2);
+		return str;
 	}
 
 	//returns a string version of the player's equipped items
