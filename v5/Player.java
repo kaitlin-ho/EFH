@@ -15,6 +15,7 @@ public class Player extends Adversary{
 		super();
 		_inventory = new ArrayList<Equipment>(6);
 		_equipment = new ArrayList<Equipment>(2);
+		_lives = 3;
 	}
 
 	public Player(String name) {
@@ -37,7 +38,7 @@ public class Player extends Adversary{
 	}
 
 	public void equip(Equipment equipment) {
-		
+
 			//You can only have 2 things max equipped at once
 		if (_equipment.size() == 2) {
 			System.out.println("You already have 2 items equipped. "
@@ -48,7 +49,7 @@ public class Player extends Adversary{
 			_equipment.add(equipment);
 			_inventory.remove(equipment);
 		}
-		
+
 		//Reset and recalculate _strengthMod and _defenseMod w/ updated equipped items
 		_strengthMod = 0;
 		_defenseMod = 0;
@@ -62,7 +63,7 @@ public class Player extends Adversary{
 	public void unequip(Equipment equipment) {
 		_equipment.remove(equipment);
 		_inventory.add(equipment);
-		
+
 		//Reset and recalculate _strengthMod and _defenseMod w/ updated equipped items
 		_strengthMod = 0;
 		_defenseMod = 0;

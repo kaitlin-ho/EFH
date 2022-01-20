@@ -13,7 +13,7 @@ public class Ducky extends Monster {
 	private int _whichQuest;
 
 	public Ducky() {
-		_hp = 5000;
+		_lives = 10;
 		_strength = 100;
 		_defense = 75;
 		_attackRating = 1;
@@ -67,14 +67,14 @@ public class Ducky extends Monster {
 		for (String k : _keywords.get(_whichQuest)) {
 			if (answer.indexOf(k) >= 0) {
 				System.out.println("ur right");
-				player.attack(ducky);
+				_lives -= 1;
 				s = "\n" + player.getName() + "'s HP: " + player.getHP() + "\n";
     		s += ducky.getName() + "'s HP: " + ducky.getHP() + "\n";
 				System.out.println(s);
 				return;
 			}
 			System.out.println("AHHHHHH");
-			ducky.attack(player);
+			player._lives -= 1;
 			s = "\n" + player.getName() + "'s HP: " + player.getHP() + "\n";
 			s += ducky.getName() + "'s HP: " + ducky.getHP() + "\n";
 			System.out.println(s);

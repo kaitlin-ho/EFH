@@ -11,6 +11,7 @@ public class Adversary implements AdInt{
 	protected int _strength;
 	protected int _defenseMod;
 	protected int _strengthMod;
+	protected int _lives;
 
 	public Adversary() {
 		_hp = 10000;
@@ -23,6 +24,10 @@ public class Adversary implements AdInt{
 
 	public boolean isAlive() {
 		return (_hp > 0);
+	}
+
+	public boolean isAlive(int i) {
+		return (_lives > 0);
 	}
 
 	public int getHP() {
