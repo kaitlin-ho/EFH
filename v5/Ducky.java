@@ -70,15 +70,15 @@ public class Ducky extends Monster {
 			if (answer.indexOf(k) >= 0) {
 				System.out.println("ur right");
 				_lives -= 1;
-				s = "\n" + player.getName() + "'s HP: " + player.getLives() + "\n";
-    		s += ducky.getName() + "'s HP: " + ducky.getLives() + "\n";
+				s = "\n" + player.getName() + "'s Lives: " + player.getLives() + "\n";
+    				s += ducky.getName() + "'s Lives: " + ducky.getLives() + "\n";
 				System.out.println(s);
 				return;
 			}
 			System.out.println("AHHHHHH");
 			player._lives -= 1;
-			s = "\n" + player.getName() + "'s HP: " + player.getLives() + "\n";
-			s += ducky.getName() + "'s HP: " + ducky.getLives() + "\n";
+			s = "\n" + player.getName() + "'s Lives: " + player.getLives() + "\n";
+			s += ducky.getName() + "'s Lives: " + ducky.getLives() + "\n";
 			System.out.println(s);
 		}
 	}
