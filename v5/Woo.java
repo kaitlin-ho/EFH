@@ -296,10 +296,10 @@ public class Woo{
         System.out.println("finished judging");
       }
       else {
-        System.out.println("AHHHHHH");
-        _ducky.attack(_player);
-        s = "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
-        s += _ducky.getName() + "'s HP: " + _ducky.getHP() + "\n";
+        System.out.println("Too Slow HAHAAAHAAAAAA");
+        _player._lives -= 1;
+        s = "\n" + _player.getName() + "'s HP: " + _player.getLives() + "\n";
+        s += _ducky.getName() + "'s HP: " + _ducky.getLives () + "\n";
         System.out.println(s);
       }
       delay(1000);

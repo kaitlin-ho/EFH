@@ -13,14 +13,11 @@ public class Player extends Adversary{
 
 	public Player() {
 		super();
-<<<<<<< HEAD
 		_inventory = new ArrayList<Equipment>(6);
 		_equipment = new ArrayList<Equipment>(2);
 		_lives = 3;
-=======
 		_inventory = new ArrayList<Equipment>(6); //There are 6 items, inventory has space for all of them
 		_equipment = new ArrayList<Equipment>(2); //Max 2 items equipped at once
->>>>>>> 03c91ef7ee312936bb601b03aa458570157ba662
 	}
 
 	public Player(String name) {
@@ -53,7 +50,7 @@ public class Player extends Adversary{
 		else {
 			//transfer equipped item from inventory
 			_equipment.add(equipment);
-			_inventory.remove(equipment); 
+			_inventory.remove(equipment);
 		}
 
 		//Reset and recalculate _strengthMod and _defenseMod w/ updated equipped items
@@ -64,7 +61,6 @@ public class Player extends Adversary{
 			_defenseMod += e._defenseAlt;
 		}
 	}
-
 	//removes equipment already equipped and updates stats
 	public void unequip(Equipment equipment) {
 		//transfer equipped item back to inventory
@@ -81,14 +77,14 @@ public class Player extends Adversary{
 	}
 
 	//returns a string version of the player's inventory
-        public String invToString() {
-                String str = _name + "'s inventory: ";
-                for (Equipment equipment : _inventory) {
-                        str += equipment._name + ", ";
-                }
-                str = str.substring(0, str.length()-2);
-                return str;
-        }
+  public String invToString() {
+    String str = _name + "'s inventory: ";
+    for (Equipment equipment : _inventory) {
+			str += equipment._name + ", ";
+    }
+    str = str.substring(0, str.length()-2);
+    return str;
+	}
 
 	//returns a string version of the player's equipped items
 	public String eqToString() {

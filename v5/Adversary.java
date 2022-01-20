@@ -38,6 +38,10 @@ public class Adversary implements AdInt{
 		return _defense;
 	}
 
+	public int getLives() {
+		return _lives;
+	}
+
 	public void lowerHP(int damage) {
 		_hp = _hp - damage;
 		if (_hp < 0) { _hp = 0; }
