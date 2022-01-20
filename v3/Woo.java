@@ -466,8 +466,6 @@ public class Woo{
   public static void main( String[] args) throws IOException {
     //new game
     Woo game = new Woo();
-    game.twistBattle();
-    /*
     while (game.playTurn()) { }
     String s = "Game Over";
     System.out.println(s);
@@ -478,7 +476,6 @@ public class Woo{
     if (game._defeatCtr == 6) {
       game.twist();
     }
-    */
   }
 
 }
