@@ -93,3 +93,11 @@ Hugo :: Drove
 Kaitlin :: 
 Everyone :: Worked on adding a timer for twistBattle() using Thread.sleep()
 ===============================================================
+
+1/19/22
+---------------------------------------------------------------
+Ariella :: Updated ReadMe
+Hugo :: Got help from the CS Dojo and finished the timer
+Kaitlin :: Got help from the CS Dojo and finished the timer
+Everyone :: Worked on the timer for the end game fight
+===============================================================
