@@ -7,6 +7,8 @@ The Ducky RPG is an extension of Yo_RPG. The Player answers questions posed by N
 
 ### How To Launch:
 ```
+$ git clone git@github.com:kaitlin-ho/EFH.git
+$ cd ~/path/to/EFH
 $ javac Woo.java  
 $ java Woo  
 ```
