@@ -2,7 +2,6 @@ TO DO LIST:
 - add questions and answers for trivia
 - balance the stats
 - COMMENTSS
-- Refactor equip() method in player
 
 IF WE TIME:
 - change normal battle mechanics
