@@ -107,7 +107,7 @@ Everyone :: Worked on the timer for the end game fight in class
 
 1/20/22
 ---------------------------------------------------------------
-Ariella :: 
+Ariella :: Fixed equipment reduncies in Player.java
 Hugo :: 
 Kaitlin :: 
 Everyone :: 
