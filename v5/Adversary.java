@@ -26,6 +26,7 @@ public class Adversary implements AdInt{
 		return (_hp > 0);
 	}
 
+	// overloaded isAlive() method to check _lives instead of _hp
 	public boolean isAlive(int i) {
 		return (_lives > 0);
 	}
