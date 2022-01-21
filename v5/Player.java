@@ -52,8 +52,8 @@ public class Player extends Adversary{
 			//transfer equipped item from inventory
 			_equipment.add(equipment);
 			_inventory.remove(equipment);
-			s = "Your inventory: " + invToString() + "\n";
-			s += "Your equipped item(s): " + eqToString() + "\n";
+			s = invToString() + "\n";
+			s += eqToString() + "\n";
 		}
 
 		//Reset and recalculate _strengthMod and _defenseMod w/ updated equipped items
@@ -63,7 +63,7 @@ public class Player extends Adversary{
 			_strengthMod += e._strengthAlt;
 			_defenseMod += e._defenseAlt;
 		}
-		
+
 		return s;
 	}
 	//removes equipment already equipped and updates stats
@@ -72,8 +72,8 @@ public class Player extends Adversary{
 		//transfer equipped item back to inventory
 		_equipment.remove(equipment);
 		_inventory.add(equipment);
-		s = "Your inventory: " + invToString() + "\n";
-		s += "Your equipped item(s): " + eqToString() + "\n";
+		s = invToString() + "\n";
+		s += eqToString() + "\n";
 
 		//Reset and recalculate _strengthMod and _defenseMod w/ updated equipped items
 		_strengthMod = 0;
@@ -82,7 +82,7 @@ public class Player extends Adversary{
 			_strengthMod += e._strengthAlt;
 			_defenseMod += e._defenseAlt;
 		}
-		
+
 		return s;
 	}
 
@@ -92,8 +92,14 @@ public class Player extends Adversary{
 		for (Equipment equipment : _inventory) {
 			str += equipment._name + ", ";
 		}
-		str = str.substring(0, str.length()-2);
-		return str;
+		if (_inventory.size() > 0) {
+			str = str.substring(0, str.length()-2);
+			return str;
+		}
+		else {
+			str += "empty";
+			return str;
+		}
 	}
 
 	//returns a string version of the player's equipped items
@@ -102,8 +108,14 @@ public class Player extends Adversary{
 		for (Equipment equipment : _equipment) {
 			str += equipment._name + ", ";
 		}
-		str = str.substring(0, str.length()-2);
-		return str;
+		if (_equipment.size() > 0) {
+			str = str.substring(0, str.length()-2);
+			return str;
+		}
+		else {
+			str += "nothing";
+			return str;
+		}
 	}
 
 }

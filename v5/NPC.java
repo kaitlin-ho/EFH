@@ -31,10 +31,10 @@ public class NPC implements ChatInt {
 	public String getResponse() {
 		String response = _greeting;
 		if (_rightAnsCt == 0) {
-			response += "" + _questions.get(0);
+			response += "\n" + _questions.get(0);
 		}
 		else if (_rightAnsCt == 1) {
-			response += "" + _questions.get(1);
+			response += "\n" + _questions.get(1);
 		}
 		//message that is printed after the player has obtained both rewards
 		else {
@@ -55,7 +55,7 @@ public class NPC implements ChatInt {
 				return _winMsg;
 			}
 		}
-		return _lossMsg);
+		return (_lossMsg);
 	}
 
 }

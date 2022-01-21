@@ -74,12 +74,12 @@ public class Ducky extends Monster {
     				s += ducky.getName() + "'s Lives: " + ducky.getLives() + "\n";
 				return s;
 			}
-			player._lives -= 1;
-			s = "AHHHHHHH \n";
-			s += "\n" + player.getName() + "'s Lives: " + player.getLives() + "\n";
-			s += ducky.getName() + "'s Lives: " + ducky.getLives() + "\n";
-			return s;
 		}
+		player._lives -= 1;
+		s = "AHHHHHHH \n";
+		s += "\n" + player.getName() + "'s Lives: " + player.getLives() + "\n";
+		s += ducky.getName() + "'s Lives: " + ducky.getLives() + "\n";
+		return s;
 	}
 
 	//for when the player asks for help
