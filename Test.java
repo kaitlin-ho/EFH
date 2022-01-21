@@ -3,27 +3,29 @@ Erica's Fans and Hugo (EFH):
 Hugo Jenkins, Ariella Katz, Kaitlin Ho, Boary, Tom, Apple
 */
 import java.util.*;
+
 public class Test {
-	private static void wait(int millis)
-	  {
-	    try {
-				Scanner in = new Scanner(System.in);
-				Thread.sleep(millis);
-				System.out.println("times up");
-	    }
-	    catch (InterruptedException e) {
-	    }
-	}
 
-	public static void main(String[] args) {
-			System.out.println("hello: ");
-			wait(2000);
-	}
-}
+  private static void wait(int millis)
+  {
+    try {
+      Thread.sleep(millis);
+    }
+    catch (InterruptedException e) {
+    }
+  }
 
+  public static void main(String[] args){
+    String name = "";
+    System.out.println("hello. enter your name:");
+    Scanner in = new Scanner(System.in);
+    wait(5000);
+    System.out.println("wait is up");
+    if (Thread.interrupted()) {
+      name = in.nextLine();
+    }
+  //  if (name.length() > 0) {System.out.println(name);}
+    System.out.println("hello.");
+  }
 
-While (System.currentTimeMillis() < sts=art + 5000) {
-	if (System.in.available() > 0) {
-		String line = s.nextLine();
-	}
 }

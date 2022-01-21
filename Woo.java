@@ -22,7 +22,7 @@ public class Woo{
   public BowArrow _bowArrow;
   public KtS _kts;
 
-  private int _difficulty;
+  private int _difficulty; //not used right now
   private int _defeatCtr;
   private boolean _gameOver;
   private boolean _retreat;
@@ -112,6 +112,13 @@ public class Woo{
     _erica = new Erica(_player, _armor, _bowArrow);
     System.out.println("");
 
+  }
+
+  public void type(String s){
+    for(int i = 0; i < s.length(); i++){
+      delay(10);
+      System.out.println(s.charAt(i));
+    }
   }
 
 //method that will allow the player to interact with the NPC
@@ -209,7 +216,7 @@ public class Woo{
     }
   }
 
-//overloaded battle to make sure that when the player flees a fight, they will return to the same monster
+  //overloaded battle to make sure that when the player flees a fight, they will return to the same monster
   public void battle(Monster monster) {
     String s = "";
     String answer = "";
@@ -265,11 +272,45 @@ public class Woo{
     }
   }
 
+  public void twistBattle() throws IOException {
+    String s = "";
+    String answer = "";
+    int countDown = 5;
+    while (_player.isAlive() && _ducky.isAlive()) {
+      answer = ""; //answer that will be judged by the ducky
+      System.out.println(_ducky.getQuestion()); //question from ducky
+      Scanner y = new Scanner(System.in);
+      long start = System.currentTimeMillis(); //logs the scanner start time
+      // scanner runs continuously until the time limit is over
+      while (System.currentTimeMillis() < start + 3000) {
+        if (System.in.available() > 0) {
+          String line = y.nextLine();
+          answer = line;
+          break;
+        }
+      }
+      if (answer.length() > 0) {
+        System.out.println("judging now...");
+        _ducky.judge(answer, _ducky, _player);
+        delay(1000);
+        System.out.println("finished judging");
+      }
+      else {
+        System.out.println("AHHHHHH");
+        _ducky.attack(_player);
+        s = "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
+        s += _ducky.getName() + "'s HP: " + _ducky.getHP() + "\n";
+        System.out.println(s);
+      }
+      delay(1000);
+    }
+  }
+
+//allows the player to equip equipment if it is in their inventory
   public void equip(Equipment item){
     _player.equip(item);
   }
 
-//allows the player to equip equipment if it is in their inventory
   public void chooseEquipment() {
     String s = "";
     for (int n = 0; n < _player._inventory.size(); n++){
@@ -286,6 +327,26 @@ public class Woo{
     equip(_player._inventory.get(itemNum-1));
   }
 
+  public void unequip(Equipment item){
+    _player.unequip(item);
+  }
+
+  public void chooseUnequipment() {
+    String s = "";
+    for (int n = 0; n < _player._equipment.size(); n++){
+      s += (n + 1) + ". ";
+      s += (_player._equipment.get(n)._name) + "\n";
+    }
+    System.out.println("What do you want to unequip?");
+    System.out.println(s);
+    int itemNum = 1;
+    try{
+      itemNum = Integer.parseInt(in.readLine());
+    }
+    catch (IOException e) { }
+    unequip(_player._equipment.get(itemNum-1));
+  }
+
 //selection options for the player (between actions)
   public String startMsg(){
     String s;
@@ -293,8 +354,9 @@ public class Woo{
     s += "1: See an NPC \n";
     s += "2: Battle a monster \n";
     s += "3: Equip \n";
-    s += "4: Check your inventory\n";
-    s += "5: Check what you have equipped\n";
+    s += "4: Unequip \n";
+    s += "5: Check your inventory\n";
+    s += "6: Check what you have equipped\n";
     s += "Selection: ";
     return s;
   }
@@ -336,11 +398,20 @@ public class Woo{
       }
     }
 
-    else if ( i == 4 ) {
+    else if (i == 4) {
+      if (_player._equipment.size() == 0){
+        System.out.println("You have nothing equipped.");
+      }
+      else {
+        chooseUnequipment();
+      }
+    }
+
+    else if ( i == 5 ) {
       System.out.println(_player.invToString());
     }
 
-    else if (i==5){
+    else if (i==6){
       System.out.println(_player.eqToString());
     }
 
@@ -370,19 +441,25 @@ public class Woo{
     return proceed; // change to actual boolean value
   }
 
-//method used for delaying text so the game can flow better
-  public void delay(int seconds) {
+  public void delay(int milliseconds) {
     long beginTimer = System.currentTimeMillis();
-    while (System.currentTimeMillis() - beginTimer < seconds * 1000) {
+    while (System.currentTimeMillis() - beginTimer < milliseconds) {
       continue;
     }
   }
 
+  public static void wait(int millis) {
+    try {
+      Thread.sleep(millis);
+    }
+    catch (InterruptedException e) { }
+  }
+
 //the ducky is now your enemy
-  public void twist() {
-    delay(10);
+  public void twist() throws IOException {
+    delay(10*1000);
     System.out.println("LOL you thought you were finished?");
-    delay(2);
+    delay(2*1000);
     String d = "";
     d += "          __        \n";
     d += "        <(o )___    \n";
@@ -390,12 +467,15 @@ public class Woo{
     d += "          `---'     \n";
     System.out.println(d);
     System.out.println(_ducky._name + " has turned on you!");
-    delay(2);
+    delay(2000);
     System.out.println("Defeat " + _ducky._name + " or die trying.");
-    //resets the player's equipped items
-    _player.unequip(_player._equipment.get(0));
-    _player.unequip(_player._equipment.get(0));
-    delay(2);
+    if (_player._equipment.size() > 0) {
+      _player.unequip(_player._equipment.get(0));
+    }
+    if (_player._equipment.size() > 0) {
+      _player.unequip(_player._equipment.get(0));
+    }
+    delay(2000);
     String s = "";
     s += "Choose your equipment wisely...\n";
     System.out.print(s);
@@ -406,12 +486,12 @@ public class Woo{
     s = "You're out of time.\n";
     s += _ducky._name + " has arrived.\n";
     s += "You must attack!\n";
-    //fight the ducky
-    battle(_ducky);
+    twistBattle();
 
   }
 
-  public static void main( String[] args){
+
+  public static void main( String[] args) throws IOException {
     //new game
     Woo game = new Woo();
     while (game.playTurn()) { }
