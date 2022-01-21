@@ -372,12 +372,12 @@ public class Woo{
   public boolean playTurn(){
     boolean proceed = true;
     int i = 1;
-    type(startMsg());
+    System.out.println(startMsg());
     try {
       i = Integer.parseInt(in.readLine());
     }
     catch ( IOException e) { }
-    type("");
+    System.out.println("");
 
     if (i == 2) {
       if (_retreat) {
