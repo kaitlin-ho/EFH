@@ -1,0 +1,22 @@
+Beginning of the game, after choosing difficulty
+Hello? Can you hear me? I don't think they can hear me. O Great Adventurer, can you hear me?
+
+<yes>
+
+You can! What's your name?
+
+- prompt player to enter their name
+
+<name>! I've been trying to reach you for over ten years now. You're the destined one. Destined for
+what, you ask? Destined to be our savior. Our hero. Our world has been riddled with monsters who have
+destroyed our crops and ruined our cities. They attack in everlasting waves, controlled by their Boss.
+We need YOU, <name> to defeat the big ma- Uh. I mean the boss monster. The adventurers before you are
+now just skeletons in our closet. Sometimes we feed them to our dog. Ha Ha. Well anyway, will you help
+us?
+
+<yes>
+
+Hurrah! Well, let's get you caught up! What? Ducky? Do they not know about that already...? Really...
+So, <name>, since I've received intelligence that you somehow, SOMEHOW, do not know what a Ducky is,
+I will explain it. A Ducky is an all-knowing, magical being that follows you around. It knows everything.
+And I mean everything. Whenever you call out he
