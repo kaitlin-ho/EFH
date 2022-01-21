@@ -23,7 +23,9 @@ public class Woo{
   public KtS _kts;
 
   private int _difficulty; //not used right now
+  private int _attackCtr;
   private int _defeatCtr;
+  private int _npcCtr;
   private boolean _gameOver;
   private boolean _retreat;
 
@@ -45,7 +47,11 @@ public class Woo{
     _kats = new Kats(_player, _shield, _sword);
     _mykolyk = new Mykolyk(_player, _invisCloak, _kts);
     _erica = new Erica(_player, _armor, _bowArrow);
+    //Counters
+    _attackCtr = 0;
     _defeatCtr = 0;
+    _npcCtr = 0;
+
     isr = new InputStreamReader( System.in ); //InputStreamReader reads bytes and decodes them into characters
     in = new BufferedReader( isr ); //BufferedReader reads text from a character-input stream
     _retreat = false;
@@ -159,6 +165,8 @@ public class Woo{
     //Monster type
     if (_defeatCtr == 5) {
       _monster = new Boss();
+      s = "INSERT NARRATIVE HERE"; //special  message for Boss
+      type(s);
     }
     else if (Math.random() >= _difficulty/4.0 + 0.01) {
       _monster = new MonWeak();
@@ -173,14 +181,22 @@ public class Woo{
     s += "The foe's HP: " + _monster.getHP() + "\n";
     type(s);
     while (_player.isAlive() && _monster.isAlive()) {
-      s = "Enter \"fight\" to attack or ";
-      s += "\"flight\" to run away: ";
+      //if player has never encountered a monster, display more detailed instructions
+      if (_attackCtr == 0) {
+        s = "INSERT NARRATIVE HERE";
+        s += "Enter \"f\" for fight or ";
+        s += "\"l\" for flight: ";
+      }
+      else {
+        s = "Fight or flight?";
+      }
       type(s);
       try {
         answer = in.readLine();
       }
       catch ( IOException e ) { }
-      //if the player asks the ducky for help
+      _attackCtr = 1; //the player won't see initial instructions again
+      //if the player asks the ducky for help:
       while ((answer.indexOf("help") >=0)
       || answer.indexOf(_ducky.getName().toLowerCase()) >= 0) {
         type(help());
@@ -214,7 +230,7 @@ public class Woo{
       }
       else if (!(_player.isAlive()) && _monster.isAlive()) {
         type("The foe has defeated " + _player.getName() + "!");
-      }
+      }      s += "\"flight\" to run away: ";
     }
   }
 
@@ -231,8 +247,7 @@ public class Woo{
     type(s);
     while (_player.isAlive() && monster.isAlive()) {
       _retreat = false;
-      s = "Enter \"fight\" to attack or ";
-      s += "\"flight\" to run away: ";
+      s = "Fight or flight?";
       type(s);
       try {
         answer = in.readLine();
@@ -426,6 +441,11 @@ public class Woo{
 //NPC choices
     else {
       String st = "";
+      //if player has never seen an npc, display narrative
+      if (_npcCtr == 0) {
+        st = "INSERT NARRATIVE HERE";
+        type(st);
+      }
       st = "Who do you wish to face?";
       st += "\n1: Mr. Kats for math trivia \n";
       st += "2: Erica for pop-culture trivia \n";
@@ -436,6 +456,7 @@ public class Woo{
         u = Integer.parseInt(in.readLine());
       }
       catch ( IOException e) { }
+      _npcCtr = 1; //the player won't see the initial npc narrative again
       if (u == 1) {
         talk(_kats);
       }
