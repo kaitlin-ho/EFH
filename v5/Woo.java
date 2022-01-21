@@ -105,7 +105,7 @@ public class Woo{
     catch ( IOException e ) { }
 
     //create player and ducky
-    _player = new Player(name);
+    _player._name = name;
     _ducky = new Ducky(duckyName);
     _kats = new Kats(_player, _shield, _sword);
     _mykolyk = new Mykolyk(_player, _invisCloak, _kts);
