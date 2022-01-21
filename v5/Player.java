@@ -39,18 +39,21 @@ public class Player extends Adversary{
 		_inventory.add(equipment);
 	}
 
-	public void equip(Equipment equipment) {
+	public String equip(Equipment equipment) {
+		String s = "";
 
 		//You can only have 2 things max equipped at once
 		if (_equipment.size() == 2) {
-			System.out.println("You already have 2 items equipped. "
-			+ "Unequip something if you want to replace it.");
+			s = "You already have 2 items equipped. \n";
+			s += "Unequip something if you want to replace it. \n";
 		}
 		//adding the stats to the player with respect to the equipment they've equipped
 		else {
 			//transfer equipped item from inventory
 			_equipment.add(equipment);
 			_inventory.remove(equipment);
+			s = "Your inventory: " + invToString() + "\n";
+			s += "Your equipped item(s): " + eqToString() + "\n";
 		}
 
 		//Reset and recalculate _strengthMod and _defenseMod w/ updated equipped items
@@ -60,6 +63,8 @@ public class Player extends Adversary{
 			_strengthMod += e._strengthAlt;
 			_defenseMod += e._defenseAlt;
 		}
+		
+		return s;
 	}
 	//removes equipment already equipped and updates stats
 	public void unequip(Equipment equipment) {
