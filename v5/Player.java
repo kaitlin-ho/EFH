@@ -67,10 +67,13 @@ public class Player extends Adversary{
 		return s;
 	}
 	//removes equipment already equipped and updates stats
-	public void unequip(Equipment equipment) {
+	public String unequip(Equipment equipment) {
+		String s = "";
 		//transfer equipped item back to inventory
 		_equipment.remove(equipment);
 		_inventory.add(equipment);
+		s = "Your inventory: " + invToString() + "\n";
+		s += "Your equipped item(s): " + eqToString() + "\n";
 
 		//Reset and recalculate _strengthMod and _defenseMod w/ updated equipped items
 		_strengthMod = 0;
@@ -79,6 +82,8 @@ public class Player extends Adversary{
 			_strengthMod += e._strengthAlt;
 			_defenseMod += e._defenseAlt;
 		}
+		
+		return s;
 	}
 
 	//returns a string version of the player's inventory
