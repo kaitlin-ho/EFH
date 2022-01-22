@@ -1,22 +1,108 @@
 Beginning of the game, after choosing difficulty
-Hello? Can you hear me? I don't think they can hear me. O Great Adventurer, can you hear me?
 
-<yes>
+Hello? Uh... Hello? Can you hear me? I don't think they can hear me. O Great Adventurer! Can you hear me?
+
+<yes> - LINE 105
 
 You can! What's your name?
 
 - prompt player to enter their name
 
-<name>! I've been trying to reach you for over ten years now. You're the destined one. Destined for
-what, you ask? Destined to be our savior. Our hero. Our world has been riddled with monsters who have
-destroyed our crops and ruined our cities. They attack in everlasting waves, controlled by their Boss.
-We need YOU, <name> to defeat the big ma- Uh. I mean the boss monster. The adventurers before you are
-now just skeletons in our closet. Sometimes we feed them to our dog. Ha Ha. Well anyway, will you help
-us?
+<name, but messed up>! I've been trying to reach you for over ten years now. You're the destined one.
+Destined for what, you ask? Destined to be our savior. Our hero. Our world has been riddled with monsters
+who have destroyed our crops and ruined our cities. They attack in everlasting waves, controlled by their
+Boss. We need YOU, <name> to defeat the big ma- Uh. I mean the boss monster. The adventurers before, well.
+Well, they kind of suck. We have a bunch of their skeletons in our closet. Sometimes we feed them to our dog.
+Ha Ha. But you! The divine prophet, oh so wise and fair, spoke of you. She said you're our only hope, our Hercules.
+You know, that Greek guy? Will you help us?
 
 <yes>
 
-Hurrah! Well, let's get you caught up! What? Ducky? Do they not know about that already...? Really...
-So, <name>, since I've received intelligence that you somehow, SOMEHOW, do not know what a Ducky is,
-I will explain it. A Ducky is an all-knowing, magical being that follows you around. It knows everything.
-And I mean everything. Whenever you call out he
+Hurrah, hurrah! Let's get going! What? Ducky? Do they not know about that already? Oh really...
+Sigh, I guess I'll have to explain. So, <name>, since I've received intelligence that you somehow,
+do not know what a Ducky is, I will explain them to you. Duckies are a magical omniscient race, renowned for their
+expansive knowledge. The wild ones cannot be tamed, but we have a tamed one just for you.
+
+Here, hold it. Simply give it a name, and it will be yours.
+
+- prompt player to enter ducky name
+
+<duckyname>? Oh! I think it likes its name! That's a first. They're very hard to please, you know. <duckyname> will
+follow you 'till your death. It's pretty lazy, so it'll only respond to it's name or "help" during battles or conversations
+with the Questioners. Don't bother trying to talk to it any other time.
+
+<Questioners?> - LINE 168
+
+Huh? My lunch is ready? Well, <name>, I have to go, it's time to eat!
+
+- the main menu choices
+
+*change to see a Questioner
+
+
+IF NPC
+Why do I (can we italics it) have to do this? Why don't you do it!
+...
+Fine.
+My brave adventurer! This is a Questioner, an elite being that transcends
+mortality. They are other-worldly blacksmiths, the finest out there. They do not accept mere
+human currency as payment for their extraordinary weapons and armor. In love with riddles and questions,
+they will deem you worthy of their pieces of work if you answer correctly. Each person may only answer 2
+questions, though, as they do not have time for more than that. I wish you luck!
+
+IF MONSTER
+I'm back, I'm back! Just in time. By the way, that food was quite yummy, if I say so myself. Anyway, I see you've met
+your first monster. It's your first battle! Aren't you excited?
+
+<no.> <yes> - LINE 252
+
+It doesn't matter, get ready! Oh- And, I hope you've talked to the Questioners. You'll really need their help. Have fun!
+
+<the instructions to fight>
+
+
+IF BOSS
+What the- It's the boss! He never showed up this quickly for our other adventurers. I knew you were special.
+We are almost free! Terror no more! The final battle, isn't this just exhilarating?  Go <name>, go!
+
+IF BOSS < 1/4 HP
+It's almost dead, just a few more hits!
+
+IF BOSS dead
+...
+You-
+...
+YOU DID IT! <name caps>, OUR SAVIOR! HERO! LIBERATION FOR ALL! Hurry, tell everyone! Her? Yes, the divine prophet too.
+...
+Do you hear that? The townspeople are cheering for you. Oh, not just them. The continent is cheering for you. Huzzah!
+You've saved them from the tyranny of those disgusting creatures. What? Oh, really? <name>! Someone's just told me
+they're planning a huge celebration for you tonight. You can use my cabin to clean that dirty blood off yourself and rest
+up before the big party. I'll go help them set things up. See you there!
+
+<ducky name>, let's go back to the cabin
+
+<ducky>? Lets go?
+
+<ducky>: You are not the hero. You are not worthy of being the chosen one.
+
+<???>
+
+<ducky>: You. Are. Not. Worthy.
+
+<i am. I killed the boss. I saved the people.>
+
+<ducky>: Ah. That doesn't make you any different from the rest of the useless humans. You barely answered the Questioner's
+questions. *italics I* I will be the judge. And I will smite you if you do not live up to what you claim to be.
+
+<of course I will!>
+
+<ducky>: Speak carefully. You are talking to a member of the unparalleled Ducky Race. Ready yourself.
+
+- instructions, then start the questioning
+
+
+
+OTHER:
+- change NPC lines for the "enough questoins" part in getResponse of NPC
+- player responds to narrator
+- fix the spacings with lines, make it easier to read, maybe shorter
