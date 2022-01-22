@@ -65,7 +65,7 @@ public class Woo{
     String narration = "";
 
     s = "Ducky RPG\n";
-    s += "For the best experience, please adjust your window so this line fits on your screen; a snug fit is preferred.\n";
+    s += "For the best experience, please adjust your window so this line fits on your screen. Make sure the font is readable.";
     System.out.println(s);
 
     //Difficulty
