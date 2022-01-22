@@ -118,5 +118,5 @@ Everyone ::
 Ariella :: Fixed Kaitlin's writing; updated UMLs; added scanners for the user to input stuff for the narrator to disregard; added Kats' qna
 Hugo :: 
 Kaitlin :: Wrote and added the game's storyline; Adjusted the code to fit the story; Formatted the dialogue and text. 
-Everyone :: Made sure all versions up until now were compilable
+Everyone :: Made sure all versions up until now were compilable/ran properly
 ===============================================================
