@@ -38,7 +38,7 @@ public class NPC implements ChatInt {
 		}
 		//message that is printed after the player has obtained both rewards
 		else {
-			response = "You have already answered all of my questions! "
+			response = "You've already answered two questions. I do not have time for more. \n"
 			+ "Search elsewhere for a source of equipment. ";
 		}
 		return response;

@@ -62,8 +62,26 @@ public class Woo{
     String s = "";
     String name = "";
     String duckyName = "";
-    //instructions and description of the game
+    String narration = "";
+
     s = "Ducky RPG\n";
+
+    //Difficulty
+    s = "\nChoose your difficulty: \n";
+    s += "1: Easy\n";
+    s += "2: Medium\n";
+    s += "3: Hard\n";
+    s += "Selection: ";
+    System.out.println(s);
+    try {
+      _difficulty = Integer.parseInt( in.readLine() );
+    }
+    catch ( IOException e ) { }
+
+    narration += "Hello? Uh... Hello? Can you hear me? I don't think they can hear me.\n";
+    narration += "O Great Adventurer! Can you hear me?\n";
+
+/*
     s += "\tIn this game, you will battle monsters using equipment obtained by\n";
     s += "correctly answering trivia questions posed by NPCS.\n";
     s += "\tThere are 3 trivia categories: Math, Computer Science, and Pop-culture.\n";
@@ -82,20 +100,23 @@ public class Woo{
     s += "equip up to 2 pieces of equipment at a time. You may also view your inventory and\n";
     s += "currently equipped items at will.\n";
     s += "\n";
-    type(s);
+    */
+    System.out.println(s);
+    type(narration);
 
-    //Difficulty
-    s = "\nChoose your difficulty: \n";
-    s += "1: Easy\n";
-    s += "2: Medium\n";
-    s += "3: Hard\n";
-    s += "Selection: ";
-    type(s);
+    // player types or chooses "yes"
+
+    narration = "You can! What's your name?\n";
+
+    type(narration);
     try {
-      _difficulty = Integer.parseInt( in.readLine() );
+      name = in.readLine();
     }
     catch ( IOException e ) { }
 
+    //names the player
+    _player._name = name;
+/*
     //Names
     s = "Enter your name: ";
     type(s);
@@ -103,16 +124,53 @@ public class Woo{
       name = in.readLine();
     }
     catch ( IOException e ) { }
+    */
+/*
     s = "Enter your ducky's name: ";
     type(s);
     try {
       duckyName = in.readLine();
     }
     catch ( IOException e ) { }
+*/
+    narration = "\n" + _player.getName() + "! I've been trying to reach you for over ten years now. You're the destined one. ";
+    narration += "Destined for what, you ask? Destined to be our savior. Our hero. Our world has been riddled with monsters ";
+    narration += "who have destroyed our crops and ruined our cities. They attack in everlasting waves, controlled by their Boss. ";
+    narration += "We need YOU, " + _player.getName() + " to defeat the big ma- Uh. I mean the boss monster. ";
+    narration += "We have a bunch of their skeletons in our closet. Sometimes we feed them to our dog. Ha Ha. ";
+    narration += "But you! The divine prophet, oh so wise and fair, spoke of you. She said you're our only hope, our Hercules. ";
+    narration += "You know, that Greek guy? Will you help us?\n";
+    narration += "\n";
+    type(narration);
+// player says Yes
 
-    //create player and ducky
-    _player._name = name;
+    narration = "Hurrah, hurrah! Let's get going! What? Ducky? Do they not know about that already? Oh really... ";
+    narration += "Sigh, I guess I'll have to explain. So, " + _player.getResponse() + ", since I've received intelligence that you somehow,";
+    narration += "do not know what a Ducky is, I will explain them to you. Duckies are a magical omniscient race, renowned for their ";
+    narration += "expansive knowledge. The wild ones cannot be tamed, but we have a tamed one just for you.";
+    narration += "\n";
+    narration += "\n";
+    narration += "Here, hold it. Give it a name, and it will be yours. What will you name it?\n";
+    type(narration);
+
+    try {
+      duckyName = in.readLine();
+    }
+    catch ( IOException e ) { }
+
+    //create ducky
     _ducky = new Ducky(duckyName);
+
+    narration = "\n" + _ducky.getName() + "? Oh! I think it likes its name! That's a first. They're very hard to please, you know. ";
+    narration += _ducky.getName() + " will follow you 'till your death. It's pretty lazy, so it'll only respond to it's name or";
+    narration += " \"help\" during battles or conversations with the Questioners. Don't bother trying to talk to it any other time.\n";
+    type(narration);
+
+   //player asks: Questioners?
+
+   narration = "Huh? My lunch is ready? Well, <name>, I have to go, it's time to eat!";
+   type(narration);
+
     _kats = new Kats(_player, _shield, _sword);
     _mykolyk = new Mykolyk(_player, _invisCloak, _kts);
     _erica = new Erica(_player, _armor, _bowArrow);
@@ -123,7 +181,7 @@ public class Woo{
   //to print stuff so it looks like it's being typed out
   public static void type(String s){
     for(int i = 0; i < s.length(); i++){
-      delay(50);
+      delay(100);
       System.out.print(s.charAt(i));
     }
     System.out.println("");
@@ -133,7 +191,7 @@ public class Woo{
   public void talk(NPC npc) {
     String answer;
     Scanner convo;
-    type(npc.getResponse());
+    System.out.println(npc.getResponse());
     if (npc._rightAnsCt < 2) {
       convo = new Scanner(System.in);
       answer = convo.nextLine();
@@ -142,13 +200,13 @@ public class Woo{
       while ((answer.indexOf("help") >=0)
         || answer.indexOf(_ducky.getName().toLowerCase()) >= 0) {
         System.out.println(help());
-        System.out.println("What is your answer?");
+        System.out.println("Are you ready now? What is your answer?");
         convo = new Scanner(System.in);
         answer = convo.nextLine();
         answer = answer.trim().toLowerCase();
       }
       //returns to the NPC interaction if the player has not asked for help from the ducky again
-      type(npc.judge(answer));
+      System.out.println(npc.judge(answer));
     }
   }
 
@@ -159,14 +217,17 @@ public class Woo{
 // battle function of the game
   public void battle() {
     String s = "";
+    String narration = "";
     String answer = "";
     System.out.println("Get ready!\n");
 
     //Monster type
     if (_defeatCtr == 5) {
       _monster = new Boss();
-      s = "INSERT NARRATIVE HERE"; //special  message for Boss
-      type(s);
+      narration = "What the- \n"; //special  message for Boss
+      narration += "It's the boss! He never showed up this quickly for our other adventurers. I knew you were special.\n";
+      narration += "We are almost free! Terror no more! The final battle, isn't this just exhilarating?  Go " + _player.getName() + ", go!";
+      type(narration);
     }
     else if (Math.random() >= _difficulty/4.0 + 0.01) {
       _monster = new MonWeak();
@@ -179,18 +240,25 @@ public class Woo{
     s = "Your foe has arrived!\n";
     s += "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
     s += "The foe's HP: " + _monster.getHP() + "\n";
-    type(s);
+    System.out.println(s);
     while (_player.isAlive() && _monster.isAlive()) {
       //if player has never encountered a monster, display more detailed instructions
       if (_attackCtr == 0) {
-        s = "INSERT NARRATIVE HERE\n";
-        s += "Enter \"f\" for fight or ";
+        narration = "I'm back, I'm back! Just in time. By the way, that food was quite yummy, if I say so myself. ";
+        narration += "Anyway, I see you've met your first monster. It's your first battle! Aren't you excited?\n";
+        type(narration);
+//player says yes or no
+
+        narration = "It doesn't matter, get ready! Oh- And, I hope you've talked to the Questioners. You'll really need their help. Have fun!\n";
+        type(narration);
+
+        s = "Enter \"f\" for fight or ";
         s += "\"l\" for flight: ";
       }
       else {
         s = "Fight or flight?";
       }
-      type(s);
+      System.out.println(s);
       try {
         answer = in.readLine();
       }
@@ -199,8 +267,8 @@ public class Woo{
       //if the player asks the ducky for help:
       while ((answer.indexOf("help") >=0)
       || answer.indexOf(_ducky.getName().toLowerCase()) >= 0) {
-        type(help());
-        type("Well? Fight or flight?");
+        System.out.println(help());
+        System.out.println("Well? Fight or flight?");
         try {
           answer = in.readLine();
         }
@@ -209,7 +277,7 @@ public class Woo{
       }
       //retreating from the fight
       if (answer.trim().toLowerCase().indexOf("f") < 0) {
-        type("Retreat!");
+        System.out.println("Retreat!");
         _retreat = true;
         return;
       }
@@ -222,14 +290,14 @@ public class Woo{
       s += "The foe's HP: " + _monster.getHP() + "\n";
       System.out.println(s);
       if ( _player.isAlive() && !(_monster.isAlive())) {
-        type(_player.getName() + " have defeated the foe!");
+        System.out.println(_player.getName() + " have defeated the foe!");
         _defeatCtr++;
       }
       else if (!(_player.isAlive()) && !(_monster.isAlive())) {
-        type(_player.getName() + " and the foe have defeated each other!");
+        System.out.println(_player.getName() + " and the foe have defeated each other!");
       }
       else if (!(_player.isAlive()) && _monster.isAlive()) {
-        type("The foe has defeated " + _player.getName() + "!");
+        System.out.println("The foe has defeated " + _player.getName() + "!");
       }      s += "\"flight\" to run away: ";
     }
   }
@@ -238,25 +306,25 @@ public class Woo{
   public void battle(Monster monster) {
     String s = "";
     String answer = "";
-    type("Get ready!\n");
+    System.out.println("Get ready!\n");
 
     //The battle begins!
     s = "Your foe has arrived!\n";
     s += "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
     s += "The foe's HP: " + monster.getHP() + "\n";
-    type(s);
+    System.out.println(s);
     while (_player.isAlive() && monster.isAlive()) {
       _retreat = false;
       s = "Fight or flight?";
-      type(s);
+      System.out.println(s);
       try {
         answer = in.readLine();
       }
       catch ( IOException e ) { }
       while ((answer.indexOf("help") >=0)
       || answer.indexOf(_ducky.getName().toLowerCase()) >= 0) {
-        type(help());
-        type("Well? Fight or flight?");
+        System.out.println(help());
+        System.out.println("Well? Fight or flight?");
         try {
           answer = in.readLine();
         }
@@ -264,7 +332,7 @@ public class Woo{
         answer = answer.trim().toLowerCase();
       }
       if (answer.trim().toLowerCase().indexOf("f") < 0) {
-        type("Retreat!");
+        System.out.println("Retreat!");
         _retreat = true;
         return;
       }
@@ -275,16 +343,16 @@ public class Woo{
       //Show results
       s = "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
       s += "The foe's HP: " + monster.getHP() + "\n";
-      type(s);
+      System.out.println(s);
       if ( _player.isAlive() && !(monster.isAlive())) {
-        type(_player.getName() + " has defeated the foe!");
+        System.out.println(_player.getName() + " has defeated the foe!");
         _defeatCtr++;
       }
       else if (!(_player.isAlive()) && !(monster.isAlive())) {
-        type(_player.getName() + " and the foe have defeated each other!");
+        System.out.println(_player.getName() + " and the foe have defeated each other!");
       }
       else if (!(_player.isAlive()) && monster.isAlive()) {
-        type("The foe has defeated " + _player.getName() + "!");
+        System.out.println("The foe has defeated " + _player.getName() + "!");
       }
     }
   }
@@ -331,7 +399,7 @@ public class Woo{
 
 //allows the player to equip equipment if it is in their inventory
   public void equip(Equipment item){
-    type(_player.equip(item));
+    System.out.println(_player.equip(item));
   }
 
   public void chooseEquipment() {
@@ -340,8 +408,8 @@ public class Woo{
       s += (n + 1) + ". ";
       s += (_player._inventory.get(n)._name) + "\n";
     }
-    type("What do you want to equip?");
-    type(s);
+    System.out.println("What do you want to equip?");
+    System.out.println(s);
     int itemNum = 1;
     try{
       itemNum = Integer.parseInt(in.readLine());
@@ -351,7 +419,7 @@ public class Woo{
   }
 
   public void unequip(Equipment item){
-    type(_player.unequip(item));
+    System.out.println(_player.unequip(item));
   }
 
   public void chooseUnequipment() {
@@ -360,8 +428,8 @@ public class Woo{
       s += (n + 1) + ". ";
       s += (_player._equipment.get(n)._name) + "\n";
     }
-    type("What do you want to unequip?");
-    type(s);
+    System.out.println("What do you want to unequip?");
+    System.out.println(s);
     int itemNum = 1;
     try{
       itemNum = Integer.parseInt(in.readLine());
@@ -374,7 +442,7 @@ public class Woo{
   public String startMsg(){
     String s;
     s = "\nWhat would you like to do? \n";
-    s += "1: See an NPC \n";
+    s += "1: Interact with a Questioner \n";
     s += "2: Battle a monster \n";
     s += "3: Equip \n";
     s += "4: Unequip \n";
@@ -406,7 +474,7 @@ public class Woo{
       }
       if (_defeatCtr == 6) {
 	proceed = false;
-	type("We have a winner!!!");
+	System.out.println("We have a winner!!!");
       }
       return proceed;
     }
@@ -414,7 +482,7 @@ public class Woo{
 //so the player cannot equip anything not in their inventory
     else if (i == 3) {
       if (_player._inventory.size() == 0){
-        type("You have nothing in your inventory.");
+        System.out.println("You have nothing in your inventory.");
       }
       else {
         chooseEquipment();
@@ -423,7 +491,7 @@ public class Woo{
 
     else if (i == 4) {
       if (_player._equipment.size() == 0){
-        type("You have nothing equipped.");
+        System.out.println("You have nothing equipped.");
       }
       else {
         chooseUnequipment();
@@ -431,26 +499,36 @@ public class Woo{
     }
 
     else if ( i == 5 ) {
-      type(_player.invToString());
+      System.out.println(_player.invToString());
     }
 
     else if (i==6){
-      type(_player.eqToString());
+      System.out.println(_player.eqToString());
     }
 
 //NPC choices
     else {
       String st = "";
-      //if player has never seen an npc, display narrative
-      if (_npcCtr == 0) {
-        st = "INSERT NARRATIVE HERE";
-        type(st);
-      }
+      String narration = "";
+
       st = "Who do you wish to face?";
       st += "\n1: Mr. Kats for math trivia \n";
       st += "2: Erica for pop-culture trivia \n";
       st += "3: Mr. Mykolyk for computer science trivia";
-      type(st);
+
+      //if player has never seen an npc, display narrative
+      if (_npcCtr == 0) {
+        narration = "Why do I have to do this? Why don't you do it!? \n";
+        narration += "...\n";
+        narration += "Fine. My brave adventurer! This is a Questioner, an elite being that transcends mortality. ";
+        narration += "They are other-worldly blacksmiths, the finest out there. They do not accept mere human currency";
+        narration += " as payment for their extraordinary weapons and armor. In love with riddles and questions, ";
+        narration += "they will deem you worthy of their pieces of work if you answer correctly. ";
+        narration += "Each person may only answer 2 questions, though, as they do not have time for more than that. I wish you luck!\n";
+        type(narration);
+      }
+
+      System.out.println(st);
       int u = 1;
       try {
         u = Integer.parseInt(in.readLine());
@@ -480,35 +558,35 @@ public class Woo{
 //the ducky is now your enemy
   public void twist() throws IOException {
     delay(10*1000);
-    type("LOL you thought you were finished?");
+    System.out.println("LOL you thought you were finished?");
     delay(2*1000);
     String d = "";
     d += "          __        \n";
     d += "        <(o )___    \n";
     d += "         ( ._> /    \n";
     d += "          `---'     \n";
-    type(d);
-    type(_ducky._name + " has turned on you!");
+    System.out.println(d);
+    System.out.println(_ducky._name + " has turned on you!");
     delay(2000);
-    type("Defeat " + _ducky._name + " or die trying.");
+    System.out.println("Defeat " + _ducky._name + " or die trying.");
     if (_player._equipment.size() > 0) {
-      type(_player.unequip(_player._equipment.get(0)));
+      System.out.println(_player.unequip(_player._equipment.get(0)));
     }
     if (_player._equipment.size() > 0) {
-      type(_player.unequip(_player._equipment.get(0)));
+      System.out.println(_player.unequip(_player._equipment.get(0)));
     }
     delay(2000);
     String s = "";
     s += "Choose your equipment wisely...\n";
-    type(s);
+    System.out.println(s);
     chooseEquipment();
     s = "Now choose another.\n";
-    type(s);
+    System.out.println(s);
     chooseEquipment();
     s = "You're out of time.\n";
     s += _ducky._name + " has arrived.\n";
     s += "You must attack!\n";
-    type(s);
+    System.out.println(s);
     twistBattle();
 
   }
@@ -519,7 +597,7 @@ public class Woo{
     Woo game = new Woo();
     while (game.playTurn()) { }
     String s = "Game Over";
-    type(s);
+    System.out.println(s);
 
     System.out.println("\n" + "\n");
 
@@ -527,7 +605,7 @@ public class Woo{
     if (game._defeatCtr == 6) {
       game.twist();
     }
-    type("Game Over (for real this time)");
+    System.out.println("Game Over (for real this time)");
   }
 
 }
