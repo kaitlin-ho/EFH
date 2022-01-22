@@ -65,7 +65,7 @@ public class Woo{
     String narration = "";
 
     s = "Ducky RPG\n";
-    s += "For the best experience, please adjust your window so this line fits on your screen. Please also sure your font is at a comfortable reading size.";
+    s += "For the best experience, please adjust your window so this line fits on your screen. Please also be sure your font is at a comfortable reading size.";
     System.out.println(s);
 
     //Difficulty
@@ -103,7 +103,6 @@ public class Woo{
     s += "currently equipped items at will.\n";
     s += "\n";
     */
-    System.out.println(s);
     type(narration);
 
     // player types or chooses "yes"
@@ -139,8 +138,8 @@ public class Woo{
     + "Our hero.\n"
     + "Our world has been riddled with monsters who have destroyed our crops and ruined our cities.\n"
     + "They attack in everlasting waves, controlled by their Boss.\n"
-    + "We need YOU, " + _player.getName() + " to defeat the big ma- Uh. I mean the boss monster. "
-    + "We have a bunch of their skeletons in our closet.\n"
+    + "We need YOU, " + _player.getName() + ", to defeat the big ma- Uh. I mean the boss monster. \n"
+    + "There have been Adventurers before you. We have a bunch of their skeletons in our closet.\n"
     + "Sometimes we feed them to our dog. Ha Ha.\n"
     + "But you! The divine prophet, oh so wise and fair, spoke of you. She said you're our only hope, our Hercules. You know, that Greek guy?\n"
     + "Will you help us?\n"
@@ -150,9 +149,9 @@ public class Woo{
 
     narration = "Hurrah, hurrah! Let's get going! What? Ducky? Do they not know about that already? Oh really... "
     + "Sigh, I guess I'll have to explain.\n"
-    + "So, " + _player.getName() + ", since I've received intelligence that you somehow, do not know what a Ducky is, I will explain them to you\n"
+    + "So, " + _player.getName() + ", since I've received intelligence that you somehow, do not know what a Ducky is, I will explain them to you.\n"
     + "Duckies are a magical omniscient race, renowned for their "
-    + "expansive knowledge. The wild ones cannot be tamed, but we have a tamed one just for you."
+    + "expansive knowledge. The wild ones cannot be tamed, but we have tamed one just for you."
     + "\n"
     + "\n"
     + "Here, hold it. Give it a name, and it will be yours. What will you name it?\n";
@@ -167,9 +166,9 @@ public class Woo{
     _ducky = new Ducky(duckyName);
 
     narration = "\n" + _ducky.getName() + "? Oh! I think it likes its name! That's a first. They're very hard to please, you know. "
-    + _ducky.getName() + " will follow you 'till your death.\n"
-    + "It's pretty lazy, though so it'll only respond to it's name or \"help\" during battles or conversations with the Questioners. \n"
-    + "Don't bother trying to talk to it any other time.\n";
+    + _ducky.getName() + " will follow you 'til your death.\n"
+    + "It's pretty lazy, though, so it'll only respond to its name and/or \"help\" during battles or conversations with the Questioners. \n"
+    + "Don't bother trying to talk to it at any other time.\n";
     type(narration);
 
    //player asks: Questioners?
@@ -233,9 +232,9 @@ public class Woo{
       _monster = new Boss();
       //message for BOSS
       narration = "What the- \n"
-      + "It's the boss! He never showed up this quickly for our other adventurers. I knew you were special.\n"
+      + "It's the boss! He's never showed up this quickly for our other adventurers. I knew you were special.\n"
       + "We are almost free! Terror no more!\n"
-      + "The final battle, isn't this just exhilarating?  Go " + _player.getName() + ", go!";
+      + "The final battle, isn't this just exhilarating? Go " + _player.getName() + ", go!";
       type(narration);
     }
     else if (Math.random() >= _difficulty/4.0 + 0.01) {
@@ -540,7 +539,7 @@ public class Woo{
         narration = "Why do I have to do this? Why don't you do it!? \n"
         + "...\n"
         + "Fine.\n"
-        + "My brave adventurer! This is a Questioner, an elite being that transcends mortality. They are other-worldly blacksmiths, the finest out there.\n"
+        + "My brave Adventurer! This is a Questioner, an elite being that transcends mortality. They are other-worldly blacksmiths, the finest out there.\n"
         + "They do not accept mere human currency as payment for their extraordinary weapons and armor.\n"
         + "In love with riddles and questions, they will deem you worthy of their pieces of work if you answer correctly.\n"
         + "Each person may only answer 2 questions, though, as they do not have time for more than that. I wish you luck!\n";
