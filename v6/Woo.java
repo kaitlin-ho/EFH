@@ -135,7 +135,7 @@ public class Woo{
     }
     catch ( IOException e ) { }
 */
-    narration = "\n" + _player.getName() + "! I've been trying to reach you for over ten years now. You're the destined one. Destined for what, you ask? Destined to be our savior.\n" +
+    narration = "\n" + _player.getName() + "! I've been trying to reach you for over ten years now. You're the destined one. Destined for what, you ask? Destined to be our savior.\n"
     + "Our hero.\n"
     + "Our world has been riddled with monsters who have destroyed our crops and ruined our cities.\n"
     + "They attack in everlasting waves, controlled by their Boss.\n"
@@ -462,7 +462,7 @@ public class Woo{
   }
 
   public boolean playTurn(){
-    boolean  = true;
+    boolean proceed = true;
     int i = 1;
     String narration = "";
     System.out.println(startMsg());
@@ -485,7 +485,7 @@ public class Woo{
       if (_defeatCtr == 6) {
 	proceed = false;
   narration = "You-\n"
-  + "YOU DID IT! + "_player.getName() + ", OUR SAVIOR! HERO! LIBERATION FOR ALL! Hurry, tell everyone!"
+  + "YOU DID IT! + " + _player.getName() + ", OUR SAVIOR! HERO! LIBERATION FOR ALL! Hurry, tell everyone!"
   + "\n"
   + "..."
   + "Do you hear that? The townspeople are cheering for you. Oh, not just them. The continent is cheering for you. Huzzah!"
@@ -496,7 +496,7 @@ public class Woo{
   type(narration);
 
       }
-      return ;
+      return proceed;
     }
 
 //so the player cannot equip anything not in their inventory
@@ -529,7 +529,6 @@ public class Woo{
 //NPC choices
     else {
       String st = "";
-      String narration = "";
 
       st = "Who do you wish to face?";
       st += "\n1: Mr. Kats for math trivia \n";
@@ -538,12 +537,12 @@ public class Woo{
 
       //if player has never seen an npc, display narrative
       if (_npcCtr == 0) {
-        narration = "Why do I have to do this? Why don't you do it!? \n";
-        + "...\n";
+        narration = "Why do I have to do this? Why don't you do it!? \n"
+        + "...\n"
         + "Fine.\n"
         + "My brave adventurer! This is a Questioner, an elite being that transcends mortality. They are other-worldly blacksmiths, the finest out there.\n"
         + "They do not accept mere human currency as payment for their extraordinary weapons and armor.\n"
-        + "In love with riddles and questions, they will deem you worthy of their pieces of work if you answer correctly. ";
+        + "In love with riddles and questions, they will deem you worthy of their pieces of work if you answer correctly. "
         + "Each person may only answer 2 questions, though, as they do not have time for more than that. I wish you luck!\n";
         type(narration);
       }
@@ -565,7 +564,7 @@ public class Woo{
         talk(_mykolyk);
       }
     }
-    return ; // change to actual boolean value
+    return proceed; // change to actual boolean value
   }
 
   public static void delay(int milliseconds) {
