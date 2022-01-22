@@ -65,6 +65,8 @@ public class Woo{
     String narration = "";
 
     s = "Ducky RPG\n";
+    s += "For the best experience, please adjust your window so this line fits on your screen; a snug fit is preferred.\n";
+    System.out.println(s);
 
     //Difficulty
     s = "\nChoose your difficulty: \n";
@@ -145,7 +147,7 @@ public class Woo{
 // player says Yes
 
     narration = "Hurrah, hurrah! Let's get going! What? Ducky? Do they not know about that already? Oh really... ";
-    narration += "Sigh, I guess I'll have to explain. So, " + _player.getResponse() + ", since I've received intelligence that you somehow,";
+    narration += "Sigh, I guess I'll have to explain. So, " + _player.getName() + ", since I've received intelligence that you somehow,";
     narration += "do not know what a Ducky is, I will explain them to you. Duckies are a magical omniscient race, renowned for their ";
     narration += "expansive knowledge. The wild ones cannot be tamed, but we have a tamed one just for you.";
     narration += "\n";
@@ -178,10 +180,11 @@ public class Woo{
 
   }
 
+
   //to print stuff so it looks like it's being typed out
   public static void type(String s){
     for(int i = 0; i < s.length(); i++){
-      delay(100);
+      delay(85);
       System.out.print(s.charAt(i));
     }
     System.out.println("");
