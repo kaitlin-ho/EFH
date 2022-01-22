@@ -112,3 +112,11 @@ Hugo :: Coded endgame lives system
 Kaitlin :: Created "type" method for printing text as though it is being typed out; started balancing stats for Equipments and Adversaries using Google Sheets
 Everyone :: 
 ===============================================================
+
+1/21/22
+---------------------------------------------------------------
+Ariella :: 
+Hugo :: 
+Kaitlin :: Wrote and added the game's storyline; Adjusted the code to fit the story; Formatted the dialogue and text. 
+Everyone :: 
+===============================================================
