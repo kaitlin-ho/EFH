@@ -168,7 +168,7 @@ public class Woo{
 
     narration = "\n" + _ducky.getName() + "? Oh! I think it likes its name! That's a first. They're very hard to please, you know. "
     + _ducky.getName() + " will follow you 'till your death.\n"
-    + "It's pretty lazy, so it'll only respond to it's name or \"help\" during battles or conversations with the Questioners. \n"
+    + "It's pretty lazy, though so it'll only respond to it's name or \"help\" during battles or conversations with the Questioners. \n"
     + "Don't bother trying to talk to it any other time.\n";
     type(narration);
 
@@ -253,7 +253,7 @@ public class Woo{
     while (_player.isAlive() && _monster.isAlive()) {
       //if player has never encountered a monster, display more detailed instructions
       if (_attackCtr == 0) {
-        narration = "I'm back, I'm back! Just in time. By the way, that food was quite yummy, if I say so myself. ";
+        narration = "I'm back, I'm back! Just in time. By the way, that food was quite yummy, if I say so myself.\n";
         narration += "Anyway, I see you've met your first monster. It's your first battle! Aren't you excited?\n";
         type(narration);
 //player says yes or no
@@ -542,7 +542,7 @@ public class Woo{
         + "Fine.\n"
         + "My brave adventurer! This is a Questioner, an elite being that transcends mortality. They are other-worldly blacksmiths, the finest out there.\n"
         + "They do not accept mere human currency as payment for their extraordinary weapons and armor.\n"
-        + "In love with riddles and questions, they will deem you worthy of their pieces of work if you answer correctly. "
+        + "In love with riddles and questions, they will deem you worthy of their pieces of work if you answer correctly.\n"
         + "Each person may only answer 2 questions, though, as they do not have time for more than that. I wish you luck!\n";
         type(narration);
       }
