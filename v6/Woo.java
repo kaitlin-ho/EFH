@@ -183,7 +183,7 @@ public class Woo{
     while (_player.isAlive() && _monster.isAlive()) {
       //if player has never encountered a monster, display more detailed instructions
       if (_attackCtr == 0) {
-        s = "INSERT NARRATIVE HERE";
+        s = "INSERT NARRATIVE HERE\n";
         s += "Enter \"f\" for fight or ";
         s += "\"l\" for flight: ";
       }
@@ -208,7 +208,7 @@ public class Woo{
         answer = answer.trim().toLowerCase();
       }
       //retreating from the fight
-      if (answer.trim().toLowerCase().indexOf("fight") < 0) {
+      if (answer.trim().toLowerCase().indexOf("f") < 0) {
         type("Retreat!");
         _retreat = true;
         return;
@@ -263,7 +263,7 @@ public class Woo{
         catch ( IOException e ) { }
         answer = answer.trim().toLowerCase();
       }
-      if (answer.trim().toLowerCase().indexOf("fight") < 0) {
+      if (answer.trim().toLowerCase().indexOf("f") < 0) {
         type("Retreat!");
         _retreat = true;
         return;
