@@ -109,7 +109,7 @@ Everyone :: Worked on the timer for the end game fight in class
 ---------------------------------------------------------------
 Ariella :: Fixed equipment reduncies in Player.java; refactored methods in NPC, Player, Ducky, Woo to make use of type(); fixed issue with improperly-structured for loop; deleted Chatbox (useless after Ducky was switched to a Monster)
 Hugo :: Coded endgame lives system
-Kaitlin :: Created "type" method for printing text as though it is being typed out; started balancing stats for Equipments and Adversaries using Google Sheets
+Kaitlin :: Created type() method for printing text as though it is being typed out; started balancing stats for Equipments and Adversaries using Google Sheets
 Everyone :: 
 ===============================================================
 
