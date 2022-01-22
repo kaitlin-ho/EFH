@@ -109,6 +109,7 @@ public class Woo{
       String anything = in.readLine();
     }
     catch ( IOException e ) { }
+    System.out.println("");
 
     narration = "You can! What's your name?\n";
 
@@ -145,14 +146,14 @@ public class Woo{
     + "There have been Adventurers before you. We have a bunch of their skeletons in our closet.\n"
     + "Sometimes we feed them to our dog. Ha Ha.\n"
     + "But you! The divine prophet, oh so wise and fair, spoke of you. She said you're our only hope, our Hercules. You know, that Greek guy?\n"
-    + "Will you help us?\n"
-    + "\n";
+    + "Will you help us?\n";
     type(narration);
 
     try {
       String anything = in.readLine();
     }
     catch ( IOException e ) { }
+    System.out.println("");
 
     narration = "Hurrah, hurrah! Let's get going! What? Ducky? Do they not know about that already? Oh really... "
     + "Sigh, I guess I'll have to explain.\n"
@@ -259,7 +260,7 @@ public class Woo{
     while (_player.isAlive() && _monster.isAlive()) {
       //if player has never encountered a monster, display more detailed instructions
       if (_attackCtr == 0) {
-        narration = "I'm back, I'm back! Just in time. By the way, that food was quite yummy, if I say so myself.\n";
+        narration = "I'm back, I'm back! Just in time. By the way, that food was quite yummy, if I do say so myself.\n";
         narration += "Anyway, I see you've met your first monster. It's your first battle! Aren't you excited?\n";
         type(narration);
 
@@ -267,6 +268,7 @@ public class Woo{
           String anything = in.readLine();
         }
         catch ( IOException e ) { }
+        System.out.println("");
 
         narration = "It doesn't matter, get ready! Oh- And, I hope you've talked to the Questioners. You'll really need their help. Have fun!\n";
         type(narration);
