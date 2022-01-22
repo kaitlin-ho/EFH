@@ -65,7 +65,7 @@ public class Woo{
     String narration = "";
 
     s = "Ducky RPG\n";
-    s += "For the best experience, please adjust your window so this line fits on your screen. Make sure the font is readable.";
+    s += "For the best experience, please adjust your window so this line fits on your screen. Please also sure your font is at a comfortable reading size.";
     System.out.println(s);
 
     //Difficulty
@@ -135,24 +135,27 @@ public class Woo{
     }
     catch ( IOException e ) { }
 */
-    narration = "\n" + _player.getName() + "! I've been trying to reach you for over ten years now. You're the destined one. ";
-    narration += "Destined for what, you ask? Destined to be our savior. Our hero. Our world has been riddled with monsters ";
-    narration += "who have destroyed our crops and ruined our cities. They attack in everlasting waves, controlled by their Boss. ";
-    narration += "We need YOU, " + _player.getName() + " to defeat the big ma- Uh. I mean the boss monster. ";
-    narration += "We have a bunch of their skeletons in our closet. Sometimes we feed them to our dog. Ha Ha. ";
-    narration += "But you! The divine prophet, oh so wise and fair, spoke of you. She said you're our only hope, our Hercules. ";
-    narration += "You know, that Greek guy? Will you help us?\n";
-    narration += "\n";
+    narration = "\n" + _player.getName() + "! I've been trying to reach you for over ten years now. You're the destined one. Destined for what, you ask? Destined to be our savior.\n" +
+    + "Our hero.\n"
+    + "Our world has been riddled with monsters who have destroyed our crops and ruined our cities.\n"
+    + "They attack in everlasting waves, controlled by their Boss.\n"
+    + "We need YOU, " + _player.getName() + " to defeat the big ma- Uh. I mean the boss monster. "
+    + "We have a bunch of their skeletons in our closet.\n"
+    + "Sometimes we feed them to our dog. Ha Ha.\n"
+    + "But you! The divine prophet, oh so wise and fair, spoke of you. She said you're our only hope, our Hercules. You know, that Greek guy?\n"
+    + "Will you help us?\n"
+    + "\n";
     type(narration);
 // player says Yes
 
-    narration = "Hurrah, hurrah! Let's get going! What? Ducky? Do they not know about that already? Oh really... ";
-    narration += "Sigh, I guess I'll have to explain. So, " + _player.getName() + ", since I've received intelligence that you somehow,";
-    narration += "do not know what a Ducky is, I will explain them to you. Duckies are a magical omniscient race, renowned for their ";
-    narration += "expansive knowledge. The wild ones cannot be tamed, but we have a tamed one just for you.";
-    narration += "\n";
-    narration += "\n";
-    narration += "Here, hold it. Give it a name, and it will be yours. What will you name it?\n";
+    narration = "Hurrah, hurrah! Let's get going! What? Ducky? Do they not know about that already? Oh really... "
+    + "Sigh, I guess I'll have to explain.\n"
+    + "So, " + _player.getName() + ", since I've received intelligence that you somehow, do not know what a Ducky is, I will explain them to you\n"
+    + "Duckies are a magical omniscient race, renowned for their "
+    + "expansive knowledge. The wild ones cannot be tamed, but we have a tamed one just for you."
+    + "\n"
+    + "\n"
+    + "Here, hold it. Give it a name, and it will be yours. What will you name it?\n";
     type(narration);
 
     try {
@@ -163,14 +166,15 @@ public class Woo{
     //create ducky
     _ducky = new Ducky(duckyName);
 
-    narration = "\n" + _ducky.getName() + "? Oh! I think it likes its name! That's a first. They're very hard to please, you know. ";
-    narration += _ducky.getName() + " will follow you 'till your death. It's pretty lazy, so it'll only respond to it's name or";
-    narration += " \"help\" during battles or conversations with the Questioners. Don't bother trying to talk to it any other time.\n";
+    narration = "\n" + _ducky.getName() + "? Oh! I think it likes its name! That's a first. They're very hard to please, you know. "
+    + _ducky.getName() + " will follow you 'till your death.\n"
+    + "It's pretty lazy, so it'll only respond to it's name or \"help\" during battles or conversations with the Questioners. \n"
+    + "Don't bother trying to talk to it any other time.\n";
     type(narration);
 
    //player asks: Questioners?
 
-   narration = "Huh? My lunch is ready? Well, <name>, I have to go, it's time to eat!";
+   narration = "Huh? My lunch is ready? Well, " + _player.getName() + ", I have to go, it's time to eat!";
    type(narration);
 
     _kats = new Kats(_player, _shield, _sword);
@@ -227,9 +231,11 @@ public class Woo{
     //Monster type
     if (_defeatCtr == 5) {
       _monster = new Boss();
-      narration = "What the- \n"; //special  message for Boss
-      narration += "It's the boss! He never showed up this quickly for our other adventurers. I knew you were special.\n";
-      narration += "We are almost free! Terror no more! The final battle, isn't this just exhilarating?  Go " + _player.getName() + ", go!";
+      //message for BOSS
+      narration = "What the- \n"
+      + "It's the boss! He never showed up this quickly for our other adventurers. I knew you were special.\n"
+      + "We are almost free! Terror no more!\n"
+      + "The final battle, isn't this just exhilarating?  Go " + _player.getName() + ", go!";
       type(narration);
     }
     else if (Math.random() >= _difficulty/4.0 + 0.01) {
@@ -240,9 +246,9 @@ public class Woo{
     }
 
     //The battle begins!
-    s = "Your foe has arrived!\n";
+    s = "A monster has arrived!\n";
     s += "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
-    s += "The foe's HP: " + _monster.getHP() + "\n";
+    s += "The monster's HP: " + _monster.getHP() + "\n";
     System.out.println(s);
     while (_player.isAlive() && _monster.isAlive()) {
       //if player has never encountered a monster, display more detailed instructions
@@ -271,7 +277,7 @@ public class Woo{
       while ((answer.indexOf("help") >=0)
       || answer.indexOf(_ducky.getName().toLowerCase()) >= 0) {
         System.out.println(help());
-        System.out.println("Well? Fight or flight?");
+        System.out.println("Fight or flight?");
         try {
           answer = in.readLine();
         }
@@ -290,17 +296,17 @@ public class Woo{
       int damageAgainstPlayer = _monster.attack(_player);
       //Show results
       s = "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
-      s += "The foe's HP: " + _monster.getHP() + "\n";
+      s += "The monster's HP: " + _monster.getHP() + "\n";
       System.out.println(s);
       if ( _player.isAlive() && !(_monster.isAlive())) {
-        System.out.println(_player.getName() + " have defeated the foe!");
+        System.out.println(_player.getName() + " has defeated the monster!");
         _defeatCtr++;
       }
       else if (!(_player.isAlive()) && !(_monster.isAlive())) {
-        System.out.println(_player.getName() + " and the foe have defeated each other!");
+        System.out.println(_player.getName() + " and the monster have defeated each other!");
       }
       else if (!(_player.isAlive()) && _monster.isAlive()) {
-        System.out.println("The foe has defeated " + _player.getName() + "!");
+        System.out.println("The monster has defeated " + _player.getName() + "!");
       }      s += "\"flight\" to run away: ";
     }
   }
@@ -312,9 +318,9 @@ public class Woo{
     System.out.println("Get ready!\n");
 
     //The battle begins!
-    s = "Your foe has arrived!\n";
+    s = "A monster has arrived!\n";
     s += "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
-    s += "The foe's HP: " + monster.getHP() + "\n";
+    s += "The monster's HP: " + monster.getHP() + "\n";
     System.out.println(s);
     while (_player.isAlive() && monster.isAlive()) {
       _retreat = false;
@@ -345,17 +351,17 @@ public class Woo{
       int damageAgainstPlayer = monster.attack(_player);
       //Show results
       s = "\n" + _player.getName() + "'s HP: " + _player.getHP() + "\n";
-      s += "The foe's HP: " + monster.getHP() + "\n";
+      s += "The monster's HP: " + monster.getHP() + "\n";
       System.out.println(s);
       if ( _player.isAlive() && !(monster.isAlive())) {
-        System.out.println(_player.getName() + " has defeated the foe!");
+        System.out.println(_player.getName() + " has defeated the monster!");
         _defeatCtr++;
       }
       else if (!(_player.isAlive()) && !(monster.isAlive())) {
-        System.out.println(_player.getName() + " and the foe have defeated each other!");
+        System.out.println(_player.getName() + " and the monster have defeated each other!");
       }
       else if (!(_player.isAlive()) && monster.isAlive()) {
-        System.out.println("The foe has defeated " + _player.getName() + "!");
+        System.out.println("The monster has defeated " + _player.getName() + "!");
       }
     }
   }
@@ -456,8 +462,9 @@ public class Woo{
   }
 
   public boolean playTurn(){
-    boolean proceed = true;
+    boolean  = true;
     int i = 1;
+    String narration = "";
     System.out.println(startMsg());
     try {
       i = Integer.parseInt(in.readLine());
@@ -477,9 +484,19 @@ public class Woo{
       }
       if (_defeatCtr == 6) {
 	proceed = false;
-	System.out.println("We have a winner!!!");
+  narration = "You-\n"
+  + "YOU DID IT! + "_player.getName() + ", OUR SAVIOR! HERO! LIBERATION FOR ALL! Hurry, tell everyone!"
+  + "\n"
+  + "..."
+  + "Do you hear that? The townspeople are cheering for you. Oh, not just them. The continent is cheering for you. Huzzah!"
+  + "You've saved them from the tyranny of those disgusting creatures.\n"
+  + "What? Oh, really? " + _player.getName() + " Someone's just told me they're planning a huge celebration for you tonight.\n"
+  + "You can use my cabin to clean that dirty blood off yourself and rest up before your big party.\n"
+  + "I'll go help them set things up. See you there!";
+  type(narration);
+
       }
-      return proceed;
+      return ;
     }
 
 //so the player cannot equip anything not in their inventory
@@ -522,12 +539,12 @@ public class Woo{
       //if player has never seen an npc, display narrative
       if (_npcCtr == 0) {
         narration = "Why do I have to do this? Why don't you do it!? \n";
-        narration += "...\n";
-        narration += "Fine. My brave adventurer! This is a Questioner, an elite being that transcends mortality. ";
-        narration += "They are other-worldly blacksmiths, the finest out there. They do not accept mere human currency";
-        narration += " as payment for their extraordinary weapons and armor. In love with riddles and questions, ";
-        narration += "they will deem you worthy of their pieces of work if you answer correctly. ";
-        narration += "Each person may only answer 2 questions, though, as they do not have time for more than that. I wish you luck!\n";
+        + "...\n";
+        + "Fine.\n"
+        + "My brave adventurer! This is a Questioner, an elite being that transcends mortality. They are other-worldly blacksmiths, the finest out there.\n"
+        + "They do not accept mere human currency as payment for their extraordinary weapons and armor.\n"
+        + "In love with riddles and questions, they will deem you worthy of their pieces of work if you answer correctly. ";
+        + "Each person may only answer 2 questions, though, as they do not have time for more than that. I wish you luck!\n";
         type(narration);
       }
 
@@ -548,7 +565,7 @@ public class Woo{
         talk(_mykolyk);
       }
     }
-    return proceed; // change to actual boolean value
+    return ; // change to actual boolean value
   }
 
   public static void delay(int milliseconds) {
@@ -608,7 +625,7 @@ public class Woo{
     if (game._defeatCtr == 6) {
       game.twist();
     }
-    System.out.println("Game Over (for real this time)");
+    type("GAME OVER");
   }
 
 }
