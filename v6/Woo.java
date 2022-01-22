@@ -105,7 +105,10 @@ public class Woo{
     */
     type(narration);
 
-    // player types or chooses "yes"
+    try {
+      String anything = in.readLine();
+    }
+    catch ( IOException e ) { }
 
     narration = "You can! What's your name?\n";
 
@@ -145,7 +148,11 @@ public class Woo{
     + "Will you help us?\n"
     + "\n";
     type(narration);
-// player says Yes
+
+    try {
+      String anything = in.readLine();
+    }
+    catch ( IOException e ) { }
 
     narration = "Hurrah, hurrah! Let's get going! What? Ducky? Do they not know about that already? Oh really... "
     + "Sigh, I guess I'll have to explain.\n"
@@ -255,7 +262,11 @@ public class Woo{
         narration = "I'm back, I'm back! Just in time. By the way, that food was quite yummy, if I say so myself.\n";
         narration += "Anyway, I see you've met your first monster. It's your first battle! Aren't you excited?\n";
         type(narration);
-//player says yes or no
+
+        try {
+          String anything = in.readLine();
+        }
+        catch ( IOException e ) { }
 
         narration = "It doesn't matter, get ready! Oh- And, I hope you've talked to the Questioners. You'll really need their help. Have fun!\n";
         type(narration);
