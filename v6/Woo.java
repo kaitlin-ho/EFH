@@ -334,7 +334,7 @@ public class Woo{
         catch ( IOException e ) { }
         answer = answer.trim().toLowerCase();
       }
-      if (answer.trim().toLowerCase().indexOf("fight") < 0) {
+      if (answer.trim().toLowerCase().indexOf("f") < 0) {
         System.out.println("Retreat!");
         _retreat = true;
         return;
