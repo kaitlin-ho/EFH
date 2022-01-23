@@ -46,13 +46,15 @@ public class NPC implements ChatInt {
 
 //NPC will add the reward equipment into the player's inventory if they correctly answer the question
 	public String judge(String answer) {
+		String s = "";
 		answer = answer.trim().toLowerCase();
 		for (String i : _keywords.get(_rightAnsCt)) {
 			if (answer.indexOf(i) >= 0) {
 				_player.invent(_equipment.get(_rightAnsCt));
-				System.out.println(_equipment.get(_rightAnsCt).about());
+				s = _winMsg + "\n";
+				s += _equipment.get(_rightAnsCt).about();
 				_rightAnsCt += 1;
-				return _winMsg;
+				return s;
 			}
 		}
 		return (_lossMsg);
