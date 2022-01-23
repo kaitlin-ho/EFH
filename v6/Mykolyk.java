@@ -17,9 +17,9 @@ public class Mykolyk extends NPC{
     _keywords.add(answersTwo);
     _equipment.add(invisCloak);
     _equipment.add(kts);
-    _greeting = "";
-    _winMsg = "";
-    _lossMsg = "";
+    _greeting = "Greetings, Thinker! Let's relax, shall we?";
+    _winMsg = "That smells like success to me!";
+    _lossMsg = "Sounds like you could benefit from a QAF post.";
   }
 
   public Mykolyk(Player player, InvisCloak invisCloak, KtS kts) {
