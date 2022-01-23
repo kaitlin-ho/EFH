@@ -125,14 +125,14 @@ Everyone :: Made sure all versions up until now were compilable/ran properly
 ---------------------------------------------------------------
 Ariella :: Added pauses at punctuation in typing; improved Kats' question 1
 Hugo ::
-Kaitlin ::
+Kaitlin :: Finished the story for the ending
 Everyone ::
 ===============================================================
 
 1/23/22
 ---------------------------------------------------------------
-Ariella ::
+Ariella :: Added stats to about() methods for the equipments; added Erica's and Mykolyk's NPC questions
 Hugo ::
-Kaitlin ::
+Kaitlin :: Balanced the stats
 Everyone ::
 ===============================================================
