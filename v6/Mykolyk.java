@@ -12,7 +12,7 @@ public class Mykolyk extends NPC{
     ArrayList<String> answersOne = new ArrayList<String>(1);
     answersOne.add("computer science is the study of theoretical foundations of computation and of practical implementation of this theory in computer systems.");
     ArrayList<String> answersTwo = new ArrayList<String>(1);
-    answersTwo.add("f(n) <= C * g(n) for some C & k where n > k.");
+    answersTwo.add("f(n) <= c * g(n) for some c & k where n > k.");
     _keywords.add(answersOne);
     _keywords.add(answersTwo);
     _equipment.add(invisCloak);
