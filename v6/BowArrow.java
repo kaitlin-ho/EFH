@@ -7,12 +7,15 @@ public class BowArrow extends Equipment{
 
   public BowArrow(){
     _name = "Bow and Arrow";
-    _strengthAlt = 45;
-    _defenseAlt = 20;
+    _strengthAlt = 173;
+    _defenseAlt = 15;
   }
 
   public String about() {
-    return "The Bow and Arrow adds a new weapon to your arsenal of ways to damage your foe.";
+    String s = "";
+    s = "The Bow and Arrow adds a new weapon to your arsenal of ways to damage your foe.\n";
+    s += "Stats: strength +173, defense +15";
+    return s;
   }
 
 }

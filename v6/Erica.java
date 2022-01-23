@@ -7,12 +7,14 @@ import java.util.*;
 public class Erica extends NPC{
   public Erica(Armor armor, BowArrow bowArrow) {
     super();
-    _questions.add("Question 1");
-    _questions.add("Question 2");
+    _questions.add("Who does Serena van der Woodsen end up with in Gossip Girl?");
+    _questions.add("Who is the main character in the anime show Naruto?");
     ArrayList<String> answersOne = new ArrayList<String>(1);
-    answersOne.add("answer 1");
+    answersOne.add("dan humphrey");
+    answersOne.add("dan");
+    answersOne.add("humphrey");
     ArrayList<String> answersTwo = new ArrayList<String>(1);
-    answersTwo.add("answer 2");
+    answersTwo.add("naruto");
     _keywords.add(answersOne);
     _keywords.add(answersTwo);
     _equipment.add(armor);

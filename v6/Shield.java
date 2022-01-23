@@ -7,11 +7,14 @@ public class Shield extends Equipment{
 
   public Shield() {
     _name = "Shield";
-    _strengthAlt = 44;
-    _defenseAlt = 70;
+    _strengthAlt = 29;
+    _defenseAlt = 55;
   }
 
   public String about() {
-    return "The shield gives you a chance to block your opponent's attack.";
+    String s = "";
+    s = "The Shield gives you a change to block your opponent's attack.\n";
+    s += "Stats: strength +29, defense +55";
+    return s;
   }
 }

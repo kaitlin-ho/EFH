@@ -7,12 +7,15 @@ public class KtS extends Equipment{
 
 	public KtS(){
 		_name = "KtS";
-		_strengthAlt = 500;
-		_defenseAlt = -50;
+		_strengthAlt = 100;
+		_defenseAlt = 100;
 	}
 
 	public String about() {
-		return "You will find that the Key-to-Success is the most powerful tool of them all";
+		String s = "";
+		s = "The Key to Success is the most powerful tool of them all.\n";
+		s += "Stats: strength +100, defense +100";
+		return s;
 	}
 
 }

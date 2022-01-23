@@ -88,12 +88,13 @@ public class Player extends Adversary{
 
 	//returns a string version of the player's inventory
 	public String invToString() {
-		String str = _name + "'s inventory: ";
+		String str = _name + "'s inventory: \n";
 		for (Equipment equipment : _inventory) {
-			str += equipment._name + ", ";
+			str += equipment._name + ": \n";
+			str += equipment.about();
+			str += "\n";
 		}
 		if (_inventory.size() > 0) {
-			str = str.substring(0, str.length()-2);
 			return str;
 		}
 		else {
@@ -104,12 +105,13 @@ public class Player extends Adversary{
 
 	//returns a string version of the player's equipped items
 	public String eqToString() {
-		String str = "Currently equipped: ";
+		String str = "Currently equipped: \n";
 		for (Equipment equipment : _equipment) {
-			str += equipment._name + ", ";
+			str += equipment._name + ": \n";
+			str += equipment.about();
+			str += "\n";
 		}
 		if (_equipment.size() > 0) {
-			str = str.substring(0, str.length()-2);
 			return str;
 		}
 		else {

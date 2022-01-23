@@ -7,12 +7,15 @@ public class Sword extends Equipment {
 
 	public Sword() {
 		_name = "Sword";
-		_strengthAlt = 55;
-		_defenseAlt = 8;
+		_strengthAlt = 64;
+		_defenseAlt = 28;
 	}
 
 	public String about() {
-		return "The Sword makes your attacks more powerful.";
+		String s = "";
+		s = "The Sword makes your attacks more powerful.\n";
+		s += "Stats: strength +64, defense +28";
+		return s;
 	}
 
 }
