@@ -124,7 +124,7 @@ public class Woo{
 //STORY
     narration = "Hurrah, hurrah! Let's get going! What? Ducky? Do they not know about that already? Oh really... "
     + "Sigh, I guess I'll have to explain.\n"
-    + "So, " + _player.getName() + ", since I've received intelligence that you somehow, do not know what a Ducky is, I will explain them to you.\n"
+    + "So, " + _player.getName() + ", since I've received intelligence that you somehow do not know what a Ducky is, I will explain them to you.\n"
     + "Duckies are a magical omniscient race, renowned for their "
     + "expansive knowledge. The wild ones cannot be tamed, but we have tamed one just for you."
     + "\n"
@@ -150,7 +150,7 @@ public class Woo{
    //player asks: Questioners? (or anything they want)
 
 //STORY
-   narration = "Huh? My lunch is ready? Well, " + _player.getName() + ", I have to go, it's time to eat!";
+   narration = "Huh? My lunch is ready? Well, " + _player.getName() + ", I have to go. It's time to eat!";
    type(narration);
 
 //NPCS and equipment
@@ -582,8 +582,26 @@ public class Woo{
   public void twist() throws IOException {
     String narration = "";
     delay(10*5000);
+
     narration = "Hey. " + _ducky.getName() + ", let's go back to the cabin.\n"
-    + _ducky.getName() + "? Uh...Hello?";
+    + _ducky.getName() + "? Uh...Hello?\n";
+    italicizeType(narration);
+
+    narration = "What a brazen little child. You are talking to a member of the unparalleled Ducky race. Choose your next words wisely.";
+    type(narration);
+
+    narration = "What? How dare YOU speak to me like that. I am the hero. Unparalleled Ducky race? Funny. You are just dead weight.";
+    italicizeType(narration);
+
+    narration = "Ah. But that doesn't make you any different from the rest of the useless humans. I will judge your worthiness. And I will smite you if you do not live up to what you claim to be.";
+    type(narration);
+
+    narration = "Try me.";
+    italicizeType(narration);
+
+    narration = "Brace yourself.";
+    type(narration);
+
     /*
     String d = "";
     d += "          __        \n";

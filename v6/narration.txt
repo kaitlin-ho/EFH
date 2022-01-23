@@ -79,7 +79,7 @@ You've saved them from the tyranny of those disgusting creatures. What? Oh, real
 they're planning a huge celebration for you tonight. You can use my cabin to clean that dirty blood off yourself and rest
 up before the big party. I'll go help them set things up. See you there!
 
-
+GAME OVER
 
 <ducky name>, let's go back to the cabin
 
