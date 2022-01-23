@@ -198,7 +198,7 @@ public class Woo{
     for(int i = 0; i < s.length(); i++){
       System.out.print(s.charAt(i));
       if (punc.indexOf(s.charAt(i)) >= 0) {
-        delay(250);
+        delay(400);
       }
       else {
         delay(50);
