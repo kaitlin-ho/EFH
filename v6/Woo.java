@@ -177,8 +177,17 @@ public class Woo{
     System.out.println("");
   }
 
-  public static void italicize(String s){
-    System.out.println("\u001b[3m" + s + "\u001b[0m");
+  public static void italicizeType(String s){
+    String punc = ",.?!-";
+    for(int i = 0; i < s.length(); i++){
+          System.out.print("\u001b[3m" + s.charAt(i) + "\u001b[0m");
+          if (punc.indexOf(s.charAt(i)) >= 0) {
+            delay(400);
+          }
+          else {
+            delay(50);
+          }
+    }
   }
 
 //method that will allow the player to interact with the NPC
@@ -380,13 +389,10 @@ public class Woo{
         }
       }
       if (answer.length() > 0) {
-        System.out.println("judging now...");
         type(_ducky.judge(answer, _ducky, _player));
-        delay(1000);
-        System.out.println("finished judging");
       }
       else {
-        type("Too Slow HAHAAAHAAAAAA");
+        type("Too slow.");
         _player._lives -= 1;
         s = "\n" + _player.getName() + "'s Lives: " + _player.getLives() + "\n";
         s += _ducky.getName() + "'s Lives: " + _ducky.getLives () + "\n";
@@ -395,10 +401,10 @@ public class Woo{
       delay(1000);
     }
     if (!_player.isAlive()) {
-      type("Betrayal... " + _ducky.getName() + " murdered you ruthlessly.");
+      type(_player.getName() + ". Useless. Have fun in hell.");
     }
     if (!_ducky.isAlive()) {
-      type("You've killed " + _ducky.getName() +". After all they did for you. Maybe you're the true monster.");
+      type(_ducky.getName() + ", learn to control your ego. Let's go.");
     }
   }
 
@@ -483,12 +489,12 @@ public class Woo{
 
   //STORY
   narration = "You-\n"
-  + "YOU DID IT! + " + _player.getName() + ", OUR SAVIOR! HERO! LIBERATION FOR ALL! Hurry, tell everyone!"
+  + "YOU DID IT! " + _player.getName() + ", OUR SAVIOR! HERO! LIBERATION FOR ALL! Hurry, tell everyone!"
   + "\n"
   + "..."
-  + "Do you hear that? The townspeople are cheering for you. Oh, not just them. The continent is cheering for you. Huzzah!"
+  + "Do you hear that? The townspeople are cheering for you. Oh, not just them. The continent is cheering for you. Huzzah! "
   + "You've saved them from the tyranny of those disgusting creatures.\n"
-  + "What? Oh, really? " + _player.getName() + " Someone's just told me they're planning a huge celebration for you tonight.\n"
+  + "What? Oh, really? " + _player.getName() + ", someone's just told me they're planning a huge celebration for you tonight.\n"
   + "You can use my cabin to clean that dirty blood off yourself and rest up before your big party.\n"
   + "I'll go help them set things up. See you there!";
   type(narration);
@@ -574,36 +580,18 @@ public class Woo{
 
 //the ducky is now your enemy
   public void twist() throws IOException {
-    delay(10*1000);
-    System.out.println("LOL you thought you were finished?");
-    delay(2*1000);
+    String narration = "";
+    delay(10*5000);
+    narration = "Hey. " + _ducky.getName() + ", let's go back to the cabin.\n"
+    + _ducky.getName() + "? Uh...Hello?";
+    /*
     String d = "";
     d += "          __        \n";
     d += "        <(o )___    \n";
     d += "         ( ._> /    \n";
     d += "          `---'     \n";
-    System.out.println(d);
-    System.out.println(_ducky._name + " has turned on you!");
-    delay(2000);
-    System.out.println("Defeat " + _ducky._name + " or die trying.");
-    if (_player._equipment.size() > 0) {
-      System.out.println(_player.unequip(_player._equipment.get(0)));
-    }
-    if (_player._equipment.size() > 0) {
-      System.out.println(_player.unequip(_player._equipment.get(0)));
-    }
-    delay(2000);
-    String s = "";
-    s += "Choose your equipment wisely...\n";
-    System.out.println(s);
-    chooseEquipment();
-    s = "Now choose another.\n";
-    System.out.println(s);
-    chooseEquipment();
-    s = "You're out of time.\n";
-    s += _ducky._name + " has arrived.\n";
-    s += "You must attack!\n";
-    System.out.println(s);
+    */
+
     twistBattle();
 
   }
