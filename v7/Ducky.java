@@ -13,33 +13,41 @@ public class Ducky extends Monster {
 	private int _whichQuest;
 
 	public Ducky() {
-		_lives = 10;
+		_lives = 5;
 		_strength = 100;
 		_defense = 75;
 		_attackRating = 1;
 		_whichQuest = 0;
 		_questions = new ArrayList<String>(5);
 		_keywords = new ArrayList<ArrayList<String>>(5);
-		_questions.add("Question 1");
-		_questions.add("Question 2");
-		_questions.add("Question 3");
-		_questions.add("Question 4");
-		_questions.add("Question 5");
+		_questions.add("What's 5! ?");
+		_questions.add("What is the complementary color of blue?");
+		_questions.add("How many strings are on a basic guitar? Enter a number.");
+		_questions.add("Fill in tha blank: ______ Spring (Hint: It's a brand)");
+		_questions.add("What is the shape of an analog clock?");
+		_questions.add("Which of the following is a romance language? French, German, Japanese.");
+		_questions.add("Who was Stuyvesant named after? Enter his full name.");
 		ArrayList<String> answers1 = new ArrayList<String>(1);
-		answers1.add("answer 1");
+		answers1.add("120");
 		ArrayList<String> answers2 = new ArrayList<String>(1);
-		answers2.add("answer 2");
+		answers2.add("orange");
 		ArrayList<String> answers3 = new ArrayList<String>(1);
-		answers3.add("answer 3");
+		answers3.add("6");
 		ArrayList<String> answers4 = new ArrayList<String>(1);
-		answers4.add("answer 4");
+		answers4.add("poland");
 		ArrayList<String> answers5 = new ArrayList<String>(1);
-		answers5.add("answer 5");
+		answers5.add("circle");
+		ArrayList<String> answers6 = new ArrayList<String>(1);
+		answers5.add("french");
+		ArrayList<String> answers7 = new ArrayList<String>(1);
+		answers5.add("peter stuyvesant");
 		_keywords.add(answers1);
 		_keywords.add(answers2);
 		_keywords.add(answers3);
 		_keywords.add(answers4);
 		_keywords.add(answers5);
+		_keywords.add(answers6);
+		_keywords.add(answers7);
 
 	}
 
