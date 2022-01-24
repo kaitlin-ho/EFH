@@ -25,7 +25,7 @@ public class Ducky extends Monster {
 		_questions.add("How many strings are on a basic guitar? Enter a number.");
 		_questions.add("Fill in tha blank: ______ Spring (Hint: It's a brand)");
 		_questions.add("What is the shape of an analog clock?");
-		_questions.add("Which of the following is a romance language? French, German, Japanese.)";
+		_questions.add("Which of the following is a romance language? French, German, Japanese.");
 		_questions.add("Who was Stuyvesant named after? Enter his full name.");
 		ArrayList<String> answers1 = new ArrayList<String>(1);
 		answers1.add("120");
