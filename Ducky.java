@@ -20,7 +20,7 @@ public class Ducky extends Monster {
 		_whichQuest = 0;
 		_questions = new ArrayList<String>(5);
 		_keywords = new ArrayList<ArrayList<String>>(5);
-		_questions.add("What's 5!?");
+		_questions.add("What's 5! ?");
 		_questions.add("What is the complementary color of blue?");
 		_questions.add("How many strings are on a basic guitar? Enter a number.");
 		_questions.add("Fill in tha blank: ______ Spring (Hint: It's a brand)");
