@@ -13,7 +13,7 @@ public class Ducky extends Monster {
 	private int _whichQuest;
 
 	public Ducky() {
-		_lives = 10;
+		_lives = 5;
 		_strength = 100;
 		_defense = 75;
 		_attackRating = 1;
