@@ -17,7 +17,7 @@ public class Ducky extends Monster {
 		_strength = 100;
 		_defense = 75;
 		_attackRating = 1;
-		_whichQuest = 0;
+		_whichQuest = -1;
 		_questions = new ArrayList<String>(5);
 		_keywords = new ArrayList<ArrayList<String>>(5);
 		_questions.add("What's 5! ?");
@@ -62,10 +62,8 @@ public class Ducky extends Monster {
 
 	//for the twist, in order to pose a question to the player
 	public String getQuestion() {
-		final int numQuests = 5;
-		_whichQuest = (int)(Math.random() * numQuests);
 		String quest = "";
-
+		_whichQuest += 1;
 		quest = _questions.get(_whichQuest) + "\nYou have 5 seconds to answer.\n";
 		return quest;
 	}
