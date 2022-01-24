@@ -38,9 +38,9 @@ public class Ducky extends Monster {
 		ArrayList<String> answers5 = new ArrayList<String>(1);
 		answers5.add("circle");
 		ArrayList<String> answers6 = new ArrayList<String>(1);
-		answers5.add("french");
+		answers6.add("french");
 		ArrayList<String> answers7 = new ArrayList<String>(1);
-		answers5.add("peter stuyvesant");
+		answers7.add("peter stuyvesant");
 		_keywords.add(answers1);
 		_keywords.add(answers2);
 		_keywords.add(answers3);
