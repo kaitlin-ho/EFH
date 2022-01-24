@@ -22,15 +22,12 @@ UNRESOLVED ISSUES
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- this() must be the first line of an overloaded constructor.
-- You can't extend multiple classes.
 - Thread.sleep() allows you to temporarily pause a thread. Anything done in the meantime will not be carried back over to the main thread once it resumes.
 - System.in.available() returns the number of available bytes inputted by a user into a scanner.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We got rid of Chatbox.java because we realized we wanted Ducky.java to extend Monster.java and not Chatbox.java.
-we changed ___ to ___ bc...
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
